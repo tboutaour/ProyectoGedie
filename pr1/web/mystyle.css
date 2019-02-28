@@ -1,0 +1,68 @@
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #f2f2f2;
+    padding: 25px;
+}
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    min-height: 200px;
+}
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none;
+    }
+}
+.navbar {
+    margin-bottom: 0;
+    background-color: whitesmoke;
+    z-index: 9999;
+    border: 0;
+    font-family: Montserrat, sans-serif;
+    font-size: 12px !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: black !important;
+}
+
+/*Color of hover boton*/
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: black !important;
+    background-color: darkgrey !important;
+}
+/*Color of border color*/
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: black;
+}
+
+.navbar-toggle:hover {
+    background: darkgrey !important;
+    color: black !important;
+}
+/*Color of */
+.navbar-toggle:focus {
+    background: darkgrey !important;
+    color: black !important;
+}
+
+.navbar-toggle:hover .icon-bar {
+    background: whitesmoke !important;
+}
+
+.navbar-toggle:focus .icon-bar {
+    background: whitesmoke !important;
+}
+
+.navbar-toggle .icon-bar {
+    background: darkgrey !important;
+}
+
+
+
+
