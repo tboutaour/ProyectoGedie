@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-
+<!--Barra de navegació-->
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
 <!--        <div class="navbar-header">
@@ -27,11 +27,19 @@
         </div>
     </div>
 </nav>
-
+<!--Reproductor de vídeo-->
 <div class="container">
     <div class="row">
         <div class="col-sm-8">
             <div class="well">
+<!--                <video controls="controls">
+                    &lt;!&ndash; Firefox support &ndash;&gt;
+                    <source src="video.ogg" type="video/ogg" />
+                    &lt;!&ndash; Safari/Chrome support&ndash;&gt;
+                    <source src="http://ltim.uib.es/videos/ltim.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                    &lt;!&ndash; Fallback message &ndash;&gt;
+                    Backup message in case video tag isn't supported.
+                </video>-->
                 <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
                 <p>Aqui irà es video</p>
             </div>
@@ -53,48 +61,73 @@
     <h6>Clica un personatge o una paraula del núvol</h6>
     <br>
     <div class="row">
+        <!--Imatges dels personatges-->
         <div class="col-sm-8">
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Brian Griffin</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Chris_Griffin.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Chris Griffin</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Cleveland_Brown.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Cleveland Brown</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Glenn_Quagmire.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Glenn Quagmire</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Joe_Swanson.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Joe Swanson</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Lois_Griffin.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Lois Griffin</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Meg_Griffin.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Meg Griffin</p>
+                </button>
             </div>
             <div class="col-sm-3">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Current Project</p>
+                <img src="./../fotos/Peter_Griffin.png"   height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Peter Griffin</p>
+                </button>
+            </div>
+            <div class="col-sm-3">
+                <img src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
+                    <p>Stewie Griffin</p>
+                </button>
             </div>
         </div>
+        <!--Núvol de paraules-->
         <div class="col-sm-4">
-            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+            <img src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
             <p>Núvol de paraules</p>
         </div>
     </div>
     <hr>
 </div>
 
+<!--Peu de la pàgina-->
 <footer class="container-fluid text-center">
     <h4>Pràctica realitzada per:</h4>
     <h6>A. Antonio Boutaour Sanchez</h6>
