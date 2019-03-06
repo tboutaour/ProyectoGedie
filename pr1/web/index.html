@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Pràctica 1 GDIE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
+
 <!--Barra de navegació-->
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -46,7 +47,7 @@
         </div>
         <div class="col-sm-4">
             <div class="well">
-                <p>Titol episodi</p>
+                <p id="ho2">Titol episodi</p>
             </div>
             <div class="well">
                 <p>Info detallada</p>
@@ -65,7 +66,7 @@
         <div class="col-sm-8">
             <div class="col-sm-3">
                 <img src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage" onclick="getFrequency2('Holita vecinito holita vecinito holita holita hi',2)">
                     <p>Brian Griffin</p>
                 </button>
             </div>
@@ -135,4 +136,5 @@
 </footer>
 
 </body>
+<script src="./MainJavaScript.js"></script>
 </html>
