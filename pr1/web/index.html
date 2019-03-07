@@ -33,16 +33,17 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="well">
-<!--                <video controls="controls">
-                    &lt;!&ndash; Firefox support &ndash;&gt;
+                <video controls loop poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="auto">
+                    <!-- Firefox support -->
                     <source src="video.ogg" type="video/ogg" />
-                    &lt;!&ndash; Safari/Chrome support&ndash;&gt;
-                    <source src="http://ltim.uib.es/videos/ltim.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-                    &lt;!&ndash; Fallback message &ndash;&gt;
-                    Backup message in case video tag isn't supported.
-                </video>-->
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-                <p>Aqui hi haurà el video</p>
+                    <!-- Safari/Chrome support-->
+                    <source src="../video/PDF_15x06.mp4" type="video/mp4" />
+                    <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt" default></track>
+                    <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt"></track>
+                    <track label="Personatjes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt"></track>
+                    <!-- Fallback message -->
+                    Your browser does not support the video tag!
+                </video>
             </div>
         </div>
         <div class="col-sm-4">
