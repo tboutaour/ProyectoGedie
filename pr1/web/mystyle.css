@@ -15,12 +15,13 @@ footer {
         display: none;
     }
 }
+
 .navbar {
     margin-bottom: 0;
     background-color: whitesmoke;
     z-index: 9999;
     border: 0;
-    font-family: Montserrat, sans-serif;
+    font-family: Mont serrat, sans-serif;
     font-size: 12px !important;
     letter-spacing: 4px;
     border-radius: 0;
@@ -35,6 +36,7 @@ footer {
     color: black !important;
     background-color: darkgrey !important;
 }
+
 /*Color of border color*/
 .navbar-default .navbar-toggle {
     border-color: transparent;
@@ -45,6 +47,7 @@ footer {
     background: darkgrey !important;
     color: black !important;
 }
+
 /*Color of */
 .navbar-toggle:focus {
     background: darkgrey !important;
@@ -62,21 +65,10 @@ footer {
 .navbar-toggle .icon-bar {
     background: darkgrey !important;
 }
-video{
-    /* basic border */
-    /*border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 20px;*/
-    /* add regular background */
-    background-color: #ffcccc;
-    /* add gradient background */
-    background-image: -moz-linear-gradient(top, #fff, #fcc);
-    background-image: -webkit-linear-gradient(top, #fff, #fcc);
-    background-image: -o-linear-gradient(top, #fff, #fcc);
-    background-image: -ms-linear-gradient(top, #fff, #fcc);
-    background-image: linear-gradient(top, #fff, #fcc);
-    /* now a shadow */
-    -webkit-box-shadow: 0 0 10px #ccc;
-    box-shadow: 0 0 10px #ccc;
+
+video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
 }

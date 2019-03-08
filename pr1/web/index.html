@@ -33,17 +33,31 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="well">
-                <video controls loop poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="auto">
+                <video id="mainVid" loop poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="auto">
                     <!-- Firefox support -->
                     <source src="video.ogg" type="video/ogg" />
                     <!-- Safari/Chrome support-->
                     <source src="../video/PDF_15x06.mp4" type="video/mp4" />
+                    <!--tracks-->
                     <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt" default></track>
                     <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt"></track>
-                    <track label="Personatjes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt"></track>
+                    <track label="Personajes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt"></track>
                     <!-- Fallback message -->
                     Your browser does not support the video tag!
                 </video>
+                <div class="video-controls">
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <button onclick="playPause()"><img src="../fotos/controls/playpause.png" width="100"></button>
+                    <button onclick="restart()"><img src="../fotos/controls/restart.png" width="100"></button>
+                    <button onclick="mutear()"><img src="../fotos/controls/muteunmute.png" width="100"></button>
+                    <button onclick="makeSmall()">320p</button>
+                    <button onclick="makeNormal()">420p</button>
+                    <button onclick="makeBig()">560p</button>
+
+                </div>
+
             </div>
         </div>
         <div class="col-sm-4">
@@ -138,4 +152,5 @@
 
 </body>
 <script src="./MainJavaScript.js"></script>
+<script src="./videoControls.js"></script>
 </html>
