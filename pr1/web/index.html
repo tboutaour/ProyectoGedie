@@ -35,7 +35,7 @@
             <div class="well">
                 <video id="mainVid" loop poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="auto">
                     <!-- Firefox support -->
-                    <source src="video.ogg" type="video/ogg" />
+                    <!--<source src="video.ogg" type="video/ogg" />-->
                     <!-- Safari/Chrome support-->
                     <source src="../video/PDF_15x06.mp4" type="video/mp4" />
                     <!--tracks-->
@@ -78,57 +78,57 @@
     <br>
     <div class="row">
         <!--Imatges dels personatges-->
-        <div class="col-sm-8">
+        <div class="col-sm-8" id="Personatges">
             <div class="col-sm-3">
-                <img src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage" onclick="getFrequency2('Holita vecinito holita vecinito holita holita hi',2)">
+                <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
+                <button type = "submit" name = "learn" value = "myimage">
                     <p>Brian Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Chris_Griffin.png"   height="100" width="80" alt="Image">
+                <img id="Chris_Griffin" src="./../fotos/Chris_Griffin.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Chris Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Cleveland_Brown.png"   height="100" width="80" alt="Image">
+                <img id="Cleveland_Brown" src="./../fotos/Cleveland_Brown.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Cleveland Brown</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Glenn_Quagmire.png"   height="100" width="80" alt="Image">
+                <img id="Glenn_Quagmire" src="./../fotos/Glenn_Quagmire.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Glenn Quagmire</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Joe_Swanson.png"   height="100" width="80" alt="Image">
+                <img id="Joe_Swanson" src="./../fotos/Joe_Swanson.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Joe Swanson</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Lois_Griffin.png"   height="100" width="80" alt="Image">
+                <img id="Lois_Griffin" src="./../fotos/Lois_Griffin.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Lois Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Meg_Griffin.png"   height="100" width="80" alt="Image">
+                <img id="Meg_Griffin" src="./../fotos/Meg_Griffin.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Meg Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Peter_Griffin.png"   height="100" width="80" alt="Image">
+                <img id="Peter_Griffin" src="./../fotos/Peter_Griffin.png"   height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Peter Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
-                <img src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
+                <img id="Stewie_Griffin" src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
                 <button type = "submit" name = "learn" value = "myimage">
                     <p>Stewie Griffin</p>
                 </button>
@@ -153,4 +153,5 @@
 </body>
 <script src="./MainJavaScript.js"></script>
 <script src="./videoControls.js"></script>
+<script src="./tracks.js"></script>
 </html>
