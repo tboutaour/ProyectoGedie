@@ -6,7 +6,7 @@ var myVideo = document.getElementById("mainVid");
 var scene_track = myVideo.textTracks[2];
 $(function () {
     start_track ();
-})
+});
 
 
 function click_personatge(personatge) {
@@ -20,9 +20,9 @@ function click_personatge(personatge) {
     var info = JSON.parse(scene_track.cues[rnd].text);
 
     if (info.characters.includes(personatge)){
-/*        myVideo.play();
-        myVideo.currentTime=scene_track.cues[rnd].startTime;
-        console.log(myVideo.currentTime);*/
+        myVideo.play();
+        myVideo.currentTime=scene_track.cues[rnd].startTime.toString();
+        console.log(myVideo.currentTime);
         return;
     }else{
         click_personatge(personatge)

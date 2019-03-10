@@ -33,11 +33,12 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="well">
-                <video id="mainVid" loop poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="auto">
+
+                <video id="mainVid"  playinline loop autoplay poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="metadata" controls>
                     <!-- Firefox support -->
                     <!--<source src="video.ogg" type="video/ogg" />-->
                     <!-- Safari/Chrome support-->
-                    <source src="../video/PDF_15x06.mp4" type="video/mp4" />
+                    <source src="../video/PDF_15x06_1.mp4" type='video/mp4;' />
                     <!--tracks-->
                     <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt" default></track>
                     <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt"></track>
@@ -55,9 +56,7 @@
                     <button onclick="makeSmall()">320p</button>
                     <button onclick="makeNormal()">420p</button>
                     <button onclick="makeBig()">560p</button>
-
                 </div>
-
             </div>
         </div>
         <div class="col-sm-4">
@@ -81,63 +80,62 @@
         <div class="col-sm-8" id="Personatges">
             <div class="col-sm-3">
                 <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Peter_Griffin')">
+                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Brian_Griffin')">
                     <p>Brian Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Chris_Griffin" src="./../fotos/Chris_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Chris_Griffin')">
                     <p>Chris Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Cleveland_Brown" src="./../fotos/Cleveland_Brown.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Cleveland_Brown')">
                     <p>Cleveland Brown</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Glenn_Quagmire" src="./../fotos/Glenn_Quagmire.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Glenn_Quagmire')">
                     <p>Glenn Quagmire</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Joe_Swanson" src="./../fotos/Joe_Swanson.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Joe_Swanson')">
                     <p>Joe Swanson</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Lois_Griffin" src="./../fotos/Lois_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Lois_Griffin')">
                     <p>Lois Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Meg_Griffin" src="./../fotos/Meg_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Meg_Griffin')">
                     <p>Meg Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Peter_Griffin" src="./../fotos/Peter_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Peter_Griffin')">
                     <p>Peter Griffin</p>
                 </button>
             </div>
             <div class="col-sm-3">
                 <img id="Stewie_Griffin" src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage">
+                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Stewie_Griffin')">
                     <p>Stewie Griffin</p>
                 </button>
             </div>
         </div>
         <!--Núvol de paraules-->
         <div class="col-sm-4">
-            <img src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
-            <p>Núvol de paraules</p>
+            <p>Llistat de tags</p>
         </div>
     </div>
     <hr>

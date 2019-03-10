@@ -5,8 +5,10 @@ function playPause() {
         myVideo.pause();
 }
 function restart(){
-    myVideo.currentTime = 0;
-    myVideo.play();
+    var videoss = document.getElementById("mainVid");
+    console.log(videoss.currentTime);
+    videoss.currentTime = "540";
+    console.log(videoss.currentTime);
 }
 
 function makeBig() {
