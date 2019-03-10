@@ -7,7 +7,7 @@ function playPause() {
 function restart(){
     var videoss = document.getElementById("mainVid");
     console.log(videoss.currentTime);
-    videoss.currentTime = "540";
+    videoss.currentTime = "0";
     console.log(videoss.currentTime);
 }
 

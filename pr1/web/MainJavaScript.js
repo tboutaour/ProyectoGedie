@@ -8,7 +8,6 @@ $(function () {
     start_track ();
 });
 
-
 function click_personatge(personatge) {
     var max;
     var min;

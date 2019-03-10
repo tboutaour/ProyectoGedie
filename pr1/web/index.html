@@ -22,8 +22,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Sobre la pràctica</a></li>
-                <li><a href="#">Contacte</a></li>
+                <li><a href="#">Sobre la práctica</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </div>
     </div>
@@ -33,7 +33,6 @@
     <div class="row">
         <div class="col-sm-8">
             <div class="well">
-
                 <video id="mainVid"  playinline loop autoplay poster="https://next-episode.net/tv-shows-images/huge/family-guy.jpg" preload="metadata" controls>
                     <!-- Firefox support -->
                     <!--<source src="video.ogg" type="video/ogg" />-->
@@ -60,11 +59,37 @@
             </div>
         </div>
         <div class="col-sm-4">
+            <!--Título del capítulo-->
             <div class="well">
                 <p id="ho2">Titol episodi</p>
             </div>
+            <!--Información de interes de la escena-->
             <div class="well">
                 <p>Info detallada</p>
+            </div>
+            <!--Filtro de búsqueda-->
+            <div class="well">
+                <form action="index.html">
+                    <h4>Filtro de búsqueda</h4>
+                    <br>
+                    <p>Por palabra</p>
+                    <input type="text" placeholder="Search.." name="search">
+                    <select>
+                        <option value="ESP">Español</option>
+                        <option value="ENG">Inglés</option>
+                        <option value="POR">Portugués</option>
+                    </select>
+                    <br>
+                    <br>
+                    <p>Por tag</p>
+
+                    <select>
+                        <option value="Dinámico">Se tienen que meter las opciones dinamicamente</option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="submit">Filtra</button>
+                </form>
             </div>
         </div>
     </div>
@@ -72,78 +97,77 @@
 </div>
 
 <div class="container text-center">
-    <h3>Juga!</h3>
-    <h6>Clica un personatge o una paraula del núvol</h6>
+    <h3>Juega!</h3>
+    <h6>Clica un personaje</h6>
     <br>
-    <div class="row">
-        <!--Imatges dels personatges-->
-        <div class="col-sm-8" id="Personatges">
-            <div class="col-sm-3">
-                <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Brian_Griffin')">
-                    <p>Brian Griffin</p>
-                </button>
+    <div class="well">
+        <div class="row">
+            <!--Imatges dels personatges-->
+            <div class="col-sm-12" id="Personatges">
+                <div class="col-sm-2">
+                    <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png"  height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Brian_Griffin')">
+                        <p>Brian Griffin</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Chris_Griffin" src="./../fotos/Chris_Griffin.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Chris_Griffin')">
+                        <p>Chris Griffin</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Cleveland_Brown" src="./../fotos/Cleveland_Brown.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Cleveland_Brown')">
+                        <p>Cleveland Brown</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Glenn_Quagmire" src="./../fotos/Glenn_Quagmire.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Glenn_Quagmire')">
+                        <p>Glenn Quagmire</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Joe_Swanson" src="./../fotos/Joe_Swanson.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Joe_Swanson')">
+                        <p>Joe Swanson</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Lois_Griffin" src="./../fotos/Lois_Griffin.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Lois_Griffin')">
+                        <p>Lois Griffin</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Meg_Griffin" src="./../fotos/Meg_Griffin.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Meg_Griffin')">
+                        <p>Meg Griffin</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Peter_Griffin" src="./../fotos/Peter_Griffin.png"   height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Peter_Griffin')">
+                        <p>Peter Griffin</p>
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    <img id="Stewie_Griffin" src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
+                    <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Stewie_Griffin')">
+                        <p>Stewie Griffin</p>
+                    </button>
+                </div>
             </div>
-            <div class="col-sm-3">
-                <img id="Chris_Griffin" src="./../fotos/Chris_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Chris_Griffin')">
-                    <p>Chris Griffin</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Cleveland_Brown" src="./../fotos/Cleveland_Brown.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Cleveland_Brown')">
-                    <p>Cleveland Brown</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Glenn_Quagmire" src="./../fotos/Glenn_Quagmire.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Glenn_Quagmire')">
-                    <p>Glenn Quagmire</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Joe_Swanson" src="./../fotos/Joe_Swanson.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Joe_Swanson')">
-                    <p>Joe Swanson</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Lois_Griffin" src="./../fotos/Lois_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage" onclick="click_personatge('Lois_Griffin')">
-                    <p>Lois Griffin</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Meg_Griffin" src="./../fotos/Meg_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Meg_Griffin')">
-                    <p>Meg Griffin</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Peter_Griffin" src="./../fotos/Peter_Griffin.png"   height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Peter_Griffin')">
-                    <p>Peter Griffin</p>
-                </button>
-            </div>
-            <div class="col-sm-3">
-                <img id="Stewie_Griffin" src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
-                <button type = "submit" name = "learn" value = "myimage"onclick="click_personatge('Stewie_Griffin')">
-                    <p>Stewie Griffin</p>
-                </button>
-            </div>
-        </div>
-        <!--Núvol de paraules-->
-        <div class="col-sm-4">
-            <p>Llistat de tags</p>
         </div>
     </div>
+
     <hr>
 </div>
 
 <!--Peu de la pàgina-->
 <footer class="container-fluid text-center">
-    <h4>Pràctica realitzada per:</h4>
+    <h4>Práctica realizada por:</h4>
     <h6>A. Antonio Boutaour Sanchez</h6>
     <h6>Bernat Pericàs Serra</h6>
 </footer>
