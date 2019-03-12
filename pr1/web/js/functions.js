@@ -1,4 +1,4 @@
-var video = document.getElementById('video-tag');
+var video = document.getElementById('mainVid');
 
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip()

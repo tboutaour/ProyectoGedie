@@ -44,7 +44,7 @@ function init_video_controls () {
 	});
 
 	// Every time that changes the current time of the video
-	$('#video-tag').bind('timeupdate', function () {
+	$('#mainVid').bind('timeupdate', function () {
 		$("#actual-progress").slider('value', (video.currentTime / video.duration)*100)
 		$('#actual-time').text(get_normalized_time(video.currentTime))
 	});
