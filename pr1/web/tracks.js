@@ -5,8 +5,6 @@ function start_track () {
         // Cada vez que se cambie el cue: Actualizamos panel de informacion de escena (t characters y screenshots)
         scene_track.oncuechange = function(e) {
             element = document.getElementById('Personatges');
-            var siblings = element.childNodes;
-            var personatge;
             for (s in personatges){
                 personatge = document.getElementById(personatges[s]);
                 personatge.style.opacity="0.2";
