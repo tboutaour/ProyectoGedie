@@ -2,11 +2,8 @@ var video = document.getElementById('mainVid');
 
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip()
-	init_video_controls()
-	init_canvas_functions()
-	init_filter_functions()
-	init_scene_tracking()
-	init_subtitles()
+	init_video_controls();
+	init_subtitles();
 })
 
 

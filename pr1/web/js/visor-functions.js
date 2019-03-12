@@ -2,7 +2,7 @@ var last_volume = 0
 
 function init_video_controls () {
 	video.addEventListener('loadedmetadata', function() {
-	    $('#duration').text(get_normalized_time(video.duration))
+
 	    $('#filter-btn').prop("disabled", false);
 	});
 
