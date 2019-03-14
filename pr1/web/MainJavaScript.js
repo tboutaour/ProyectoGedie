@@ -4,6 +4,10 @@ var personatges =["Brian_Griffin","Chris_Griffin","Cleveland_Brown","Glenn_Quagm
 var myVideo = document.getElementById("mainVid");
 
 var scene_track = myVideo.textTracks[2];
+// var curiositats_track = myVideo.textTracks[];
+//var gag_track = myVideo.textTracks[];
+
+
 $(function () {
     start_track ();
 });
