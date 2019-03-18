@@ -125,7 +125,7 @@ video {
     /*background: url(../images/controls.png) no-repeat;*/
     background-size: 100%;
     background-position: 0 47%;
-    box-shadow: 0px -17px 40px -20px rgba(0,0,0,0.83);
+    box-shadow: 0 -17px 40px -20px rgba(0,0,0,0.83);
     width: 100%;
 
     padding: 10px 0;
@@ -223,7 +223,7 @@ div#actual-progress.ui-slider-range {
 #progress-bar {
     position: absolute;
     top: -9px;
-    left: 0px;
+    left: 0;
 }
 
 .timer-control {
@@ -354,7 +354,7 @@ input[type=range] {
 
 #well #mainVid::cue {
     /*transform: translateY(0);*/
-    margin-bottom: 0px;
+    margin-bottom: 0;
     transition: all .2s ease-in-out;
 }
 

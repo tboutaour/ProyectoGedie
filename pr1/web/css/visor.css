@@ -9,7 +9,7 @@ video {
 	background: url(../../fotos/controls.png) no-repeat;
 	background-size: 100%;
     background-position: 0 35%;
-    box-shadow: 0px -17px 40px -20px rgba(0,0,0,0.83);
+    box-shadow: 0 -17px 40px -20px rgba(0,0,0,0.83);
 	width: 100%;
 
 	padding: 10px 0;
