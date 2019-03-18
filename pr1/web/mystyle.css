@@ -66,12 +66,7 @@ footer {
     background: darkgrey !important;
 }
 
-video {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-}
+
 
 #Personatges img{
     opacity: 0.1;
@@ -118,148 +113,6 @@ video {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-#well #video-controls {
-    position: relative;
-    /*background: url(../images/controls.png) no-repeat;*/
-    background-size: 100%;
-    background-position: 0 47%;
-    box-shadow: 0 -17px 40px -20px rgba(0,0,0,0.83);
-    width: 100%;
-
-    padding: 10px 0;
-
-    margin-top: -60px;
-    transform: translateY(-23px);
-    transition: all .3s ease-in-out;
-    opacity: 0;
-
-    z-index: 300
-}
-
-#well:hover #video-controls {
-    transform: translateY(-25px);
-    transition: all .2s ease-in-out;
-    opacity: 1;
-}
-
-#well #video-controls #video-progress {
-    position: relative;
-    background-color: rgba(0,0,0,0.3);
-    border-top-color: black;
-    width: 100%;
-    height: 7px;
-    top: -17px;
-    cursor: pointer;
-}
-
-#well #video-controls #video-progress #actual-progress {
-    background: rgba(0,0,0,0.3);
-}
-
-div#actual-progress.ui-slider-range {
-    background-color: #F0E68C;
-    border-color: #FFD700;
-}
-
-#actual-progress span.ui-slider-handle.ui-state-default {
-    /*background: url(../images/egg.png) no-repeat scroll 50% 50%;*/
-    background-size: contain;
-    border: none;
-    height: 20px;
-    width: 20px;
-}
-
-#actual-progress.ui-slider-horizontal .ui-slider-handle {
-    top: -1em;
-}
-
-#well #video-controls #video-buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    top: -5px;
-}
-
-#video-controls #video-buttons div a {
-    font-size: 15px;
-    line-height: 25px;
-    cursor: pointer;
-}
-
-#video-buttons div a.btn {
-    font-size: 15px;
-    line-height: 25px;
-    padding: 2px 10px;
-    cursor: pointer;
-    background-color: #F0E68C;
-    border-color: #FFD700;
-}
-
-#control-volume-btn i {
-    width: 10px;
-    height: 10px;
-}
-
-#video-controls #video-buttons div a#control-play.btn {
-    font-size: 30px;
-    line-height: 20px;
-    padding: 10px 15px;
-    width: 55px;
-    height: 55px;
-    border-radius: 20px;
-}
-
-.fa {
-    color: black;
-}
-
-#panel-tags a i.fa {
-    font-size: 11px;
-}
-
-#progress-bar {
-    position: absolute;
-    top: -9px;
-    left: 0;
-}
-
-.timer-control {
-    background: #F0E68C;
-    border: 1px solid #FFD700;
-    border-radius: 5px;
-    padding: 2px 4px;
-    color: black;
-    font-size: 13px;
-    margin-left: 5px;
-}
-
-/*video::-webkit-media-controls {
-    display:none !important;
-}*/
-
-#collapseVolume,
-#collapseVelocimeter,
-#collapseLanguage,
-.char-info {
-    position: fixed;
-}
-
-#collapseVelocimeter div #control-vel-0.active-vel,
-#collapseVelocimeter div #control-vel-1.active-vel,
-#collapseVelocimeter div #control-vel-2.active-vel,
-#collapseLanguage div #control-esp.active-lan,
-#collapseLanguage div #control-jp.active-lan,
-#collapseLanguage div #control-eng.active-lan,
-#collapseLanguage div #control-no-sub.active-lan {
-    border: 1px solid black;
-}
-
-#lights-off, #commands-help {
-    font-size: 20px;
-    cursor: pointer;
 }
 
 .char-info {
@@ -408,4 +261,30 @@ input[type=range] {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Botons dels personatges */
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
 }
