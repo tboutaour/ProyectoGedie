@@ -48,6 +48,7 @@ function quitarModalyGuardar(valor) {
         myVideo.play();
         puntuacion = puntuacion + valor;
         actualizar_estrellas(puntuacion/pNumber);
+        actualizar_barras(valor);
         pNumber = pNumber + 1;
 }
 
@@ -61,4 +62,17 @@ function actualizar_estrellas(valor) {
         document.getElementById('estrella' + j.toString()).className = 'fas fa-star';
     }
 
+}
+
+function actualizar_barras(valor) {
+    for(i = 1; i<=5; i++){
+        var valorEtiqueta = document.getElementById('barra'+i+'val');
+        var numero = parseFloat(valorEtiqueta.innerHTML);
+        if (valor === i) {
+            numero = numero + 1;
+            valorEtiqueta.innerText = numero.toString();
+        }
+        var porcentaje = ((numero/ pNumber).toFixed(2))*100;
+        document.getElementById("bar"+i).style.width = porcentaje.toString()+"%";
+    }
 }
