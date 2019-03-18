@@ -2,10 +2,10 @@ var personatges =["Brian_Griffin","Chris_Griffin","Cleveland_Brown","Glenn_Quagm
     "Peter_Griffin","Stewie_Griffin"];
 
 var myVideo = document.getElementById("mainVid");
-
+var puntuacio = 0;
 var scene_track = myVideo.textTracks[2];
 // var curiositats_track = myVideo.textTracks[];
-//var gag_track = myVideo.textTracks[];
+var gag_track = myVideo.textTracks[3];
 
 
 $(function () {

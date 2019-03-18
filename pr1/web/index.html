@@ -8,8 +8,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="lib/jquery-ui/jquery-ui.min.css">
@@ -29,16 +29,28 @@
         </div>
     </div>
 </nav>
-<!--Reproductor de vídeo-->
 
+<!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
+        <p class="text-justify" id="gagTitol"></p>
+        <br>
+        <br>
+        <img id="gagImage" src="" alt="Image">
+        <div class="well">
+            <button onclick="quitarModalyGuardar(1)" class="fas fa-star checked"></button>
+            <button onclick="quitarModalyGuardar(2)" class="fas fa-star checked"></button>
+            <button onclick="quitarModalyGuardar(3)" class="fas fa-star checked"></button>
+            <button onclick="quitarModalyGuardar(4)" class="fas fa-star checked"></button>
+            <button onclick="quitarModalyGuardar(5)" class="fas fa-star checked"></button>
+        </div>
     </div>
+
 </div>
 
+<!--Reproductor de vídeo-->
 <div class="container">
     <div class="row">
         <div id="video-container" class="col-md-6">
@@ -47,6 +59,7 @@
                 <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt" default>
                 <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt">
                 <track label="Personajes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt">
+                <track label="Gags" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA_gags.vtt">
             </video>
             <div id="video-controls">
                 <div id="video-progress">
@@ -144,6 +157,74 @@
                 <div class="well">
                     <p>Info detallada</p>
                 </div>
+                <!--Valoración-->
+                <div class="well">
+                    <span class="heading">User Rating</span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star checked"></span>
+                    <span class="fas fa-star"></span>
+                </div>
+                <!--Valoración 2-->
+                <div class="row">
+                    <div class="side">
+                        <div>5 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-5"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div id="barra5val">0</div>
+                    </div>
+                    <div class="side">
+                        <div>4 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-4"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div id="barra4val">0</div>
+                    </div>
+                    <div class="side">
+                        <div>3 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div id="barr3val">0</div>
+                    </div>
+                    <div class="side">
+                        <div>2 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-2"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div id="barra2val">0</div>
+                    </div>
+                    <div class="side">
+                        <div>1 star</div>
+                    </div>
+                    <div class="middle">
+                        <div class="bar-container">
+                            <div class="bar-1"></div>
+                        </div>
+                    </div>
+                    <div class="side right">
+                        <div id="barra1val">0</div>
+                    </div>
+                </div>
+
             </div>
             <div class="col-sm-6">
                 <!--Filtro de búsqueda-->
@@ -163,8 +244,7 @@
                         <br>
                         <br>
                         <p>Por tag</p>
-
-                        <label>
+<label>
                             <select>
                                 <option value="Dinámico">Se tienen que meter las opciones dinamicamente</option>
                             </select>
