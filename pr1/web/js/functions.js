@@ -7,7 +7,7 @@ $(function () {
 
 function init_subtitles () {
 	// http://ronallo.com/blog/html5-video-caption-cue-settings-tester/ 		Styling cues
-	var languages = {'eng': 1, 'pt': 2}
+	var languages = {'eng': 0, 'pt': 1};
 
 	$('.set-subtitle').click(function () {
 		for (var i = 0; i < myVideo.textTracks.length; i++) myVideo.textTracks[i].mode = 'hidden';

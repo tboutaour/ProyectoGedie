@@ -5,7 +5,7 @@ function start_track () {
         gag_track.mode = 'showing';
     }, false);
         // Cada vez que se cambie el cue: Actualizamos panel de informacion de escena (t characters y screenshots)
-        var modal = document.getElementById('myModal')
+        var modal = document.getElementById('myModal');
         //modal.style.display = "none";
         scene_track.oncuechange = function() {
             element = document.getElementById('Personatges');
@@ -30,16 +30,35 @@ function start_track () {
         gag_track.oncuechange = function() {
             var gagActiveCue = gag_track.activeCues[0];
             if (gagActiveCue){
-                var gagInfo = JSON.parse(gagActiveCue.text);
-                myVideo.pause();
-                document.getElementById("gagTitol").innerHTML = gagInfo.titol;
-                document.getElementById("gagImage").src=gagInfo.captura;
-                modal.style.display = "block";
+                var timeAux = (gagActiveCue.endTime-gagActiveCue.startTime)*1000;
+                setTimeout(function(){
+                    var gagInfo = JSON.parse(gagActiveCue.text);
+                    myVideo.pause();
+                    document.getElementById("gagTitol").innerHTML = gagInfo.titol;
+                    document.getElementById("gagImage").src=gagInfo.captura;
+                    modal.style.display = "block";
+                 }, timeAux);
             }
         };
 }
 function quitarModalyGuardar(valor) {
+        debugger;
+        var modal = document.getElementById('myModal');
         modal.style.display = "none";
         myVideo.play();
-        puntuacion = puntuación + valor;
+        puntuacion = puntuacion + valor;
+        actualizar_estrellas(puntuacion/pNumber);
+        pNumber = pNumber + 1;
+}
+
+function actualizar_estrellas(valor) {
+    debugger;
+    var estrellasLlenas = Math.trunc(valor);
+    for (i = 0; i < estrellasLlenas; i++) {
+        document.getElementById('estrella' + i.toString()).className = 'fas fa-star checked';
+    }
+    for (j = estrellasLlenas; j < 5; j++) {
+        document.getElementById('estrella' + j.toString()).className = 'fas fa-star';
+    }
+
 }
