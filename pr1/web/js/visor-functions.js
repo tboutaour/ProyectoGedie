@@ -50,7 +50,7 @@ function init_video_controls () {
 	/*
 		Change the language of the subtitles
 	*/
-	$('#control-esp, #control-pt, #control-no-sub').click(function () {
+	$('#control-eng, #control-pt, #control-no-sub').click(function () {
 		$('#collapseLanguage .well .btn').removeClass('active-lan');
 		$('#control-'+$(this).attr('lan')).addClass('active-lan');
 	})

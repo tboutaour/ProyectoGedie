@@ -5,7 +5,7 @@ function start_track () {
         gag_track.mode = 'showing';
     }, false);
         // Cada vez que se cambie el cue: Actualizamos panel de informacion de escena (t characters y screenshots)
-        var modal = document.getElementById('myModal')
+        var modal = document.getElementById('myModal');
         //modal.style.display = "none";
         scene_track.oncuechange = function() {
             element = document.getElementById('Personatges');
