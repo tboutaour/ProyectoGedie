@@ -56,10 +56,13 @@
         <div id="video-container" class="col-md-6">
             <video id="mainVid" poster="../fotos/preview-episodi.png">
                 <source src="../video/PDF_15x06.mp4" type='video/mp4;'/>
-                <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt" default>
-                <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt">
-                <track label="Personajes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt">
-                <track label="Gags" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA_gags.vtt">
+                <source src="../video/PDF_16x06.oggtheora.ogv" type='video/ogv;'/>
+                <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt"><!--0-->
+                <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt"><!--1-->
+                <track label="Personajes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt"><!--2-->
+                <track label="Gags" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA_gags.vtt"><!--3-->
+                <track label="Castellano" kind="subtitles" srclang="es" src="../meta/subtitols/PDF_15x06_ES.vtt" default><!--4-->
+                <track label="Chino" kind="subtitles" srclang="xi" src="../meta/subtitols/PDF_15x06_XI.vtt"><!--5-->
             </video>
             <div id="video-controls">
                 <div id="video-progress">
@@ -87,6 +90,12 @@
                         </a>
                         <a id="control-pt" class="btn btn-default set-subtitle" lang="pt">
                             <img src="./../fotos/flags/portugal32.png" alt="Português">
+                        </a>
+                        <a id="control-xi" class="btn btn-default set-subtitle" lang="xi">
+                            <img src="./../fotos/flags/china32.png" alt="Xinès">
+                        </a>
+                        <a id="control-es" class="btn btn-default set-subtitle" lang="es">
+                            <img src="./../fotos/flags/spain32.png" alt="Castellà">
                         </a>
                     </div>
                 </div>
