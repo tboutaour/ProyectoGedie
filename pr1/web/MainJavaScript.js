@@ -27,7 +27,8 @@ function click_personatge(personatge) {
         myVideo.play();
         myVideo.currentTime=scene_track.cues[rnd].startTime.toString();
         console.log(myVideo.currentTime);
-        return;
+        //ja que el video s'iniciiara, canviar el boto principal de Pause a Play
+        $('#control-play').find('i').removeClass('fa-play').addClass('fa-pause');
     }else{
         click_personatge(personatge)
     }
