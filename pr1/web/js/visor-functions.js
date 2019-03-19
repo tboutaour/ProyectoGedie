@@ -62,7 +62,6 @@ function init_video_controls () {
 	});
 }
 
-
 function update_volume () {
     myVideo.volume = parseFloat(($('#control-volume-range').val()/100)).toFixed(1);
 }
@@ -73,8 +72,7 @@ function get_normalized_time (totalSeconds) {
 	minutes = Math.floor(totalSeconds / 60);
 	seconds = totalSeconds % 60;
 	seconds = seconds.toFixed(0);
-	if (seconds.length == 1) seconds = '0' + seconds;
+	if (seconds.length === 1) seconds = '0' + seconds;
 	if (minutes < 9) minutes = '0' + minutes;
-
 	return ((hours > 0) ? hours + ':' : '') + ((minutes > 0) ? minutes + ':' : '00:') + seconds
 }

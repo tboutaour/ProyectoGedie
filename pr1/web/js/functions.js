@@ -4,10 +4,8 @@ $(function () {
     init_subtitles();
 });
 
-
 function init_subtitles() {
-    // http://ronallo.com/blog/html5-video-caption-cue-settings-tester/ 		Styling cues
-    const languages = {'en': 0, 'pt': 1};
+    const languages = {'en': 0, 'pt': 1, 'es' : 4, 'xi' : 5};
 
     $('.set-subtitle').click(function () {
         // amagar tots els tracks
