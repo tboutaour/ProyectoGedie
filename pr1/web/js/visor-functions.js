@@ -1,5 +1,3 @@
-var last_volume = 0
-
 function init_video_controls () {
 	myVideo.addEventListener('loadedmetadata', function() {
 
@@ -14,46 +12,40 @@ function init_video_controls () {
 	// Play/Pause Button
 	$('#control-play').click(function () {
 		if (myVideo.paused || myVideo.ended) {
-			$('#control-play').find('i').removeClass('fa-play').addClass('fa-pause')
+			$('#control-play').find('i').removeClass('fa-play').addClass('fa-pause');
 			myVideo.play();
 		} else {
-			$('#control-play').find('i').removeClass('fa-pause').addClass('fa-play')
+			$('#control-play').find('i').removeClass('fa-pause').addClass('fa-play');
 			myVideo.pause();
 		}
-	})
+	});
 
 	// Stop Button
 	$('#control-stop').click(function () {
 		$('#control-play').find('i').removeClass('fa-pause').addClass('fa-play')
 		myVideo.pause();
    		myVideo.currentTime = 0;
-	})
+	});
 
 	// On change on the volume input range
-	$('#control-volume-range').on('change', function() { update_volume() })
+	$('#control-volume-range').on('change', function() { update_volume() });
 
 	// Full Screen Button
 	$('#control-expand').click(function () {
-		if (myVideo.mozRequestFullScreen) {
+		if (myVideo.requestFullscreen) {
+			myVideo.requestFullscreen();
+		} else if (myVideo.mozRequestFullScreen) { /* Firefox */
 			myVideo.mozRequestFullScreen();
-			$('#myVideo-controls').addClass('full-screen');
-		} else if (myVideo.webkitRequestFullScreen) {
-			myVideo.webkitRequestFullScreen();
-			$('#myVideo-controls').addClass('full-screen');
+		} else if (myVideo.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+			myVideo.webkitRequestFullscreen();
+		} else if (myVideo.msRequestFullscreen) { /* IE/Edge */
+			myVideo.msRequestFullscreen();
 		}
 	});
 	// Every time that changes the current time of the video
 	$('#mainVid').bind('timeupdate', function () {
-		$("#actual-progress").slider('value', (myVideo.currentTime / myVideo.duration)*100)
+		$("#actual-progress").slider('value', (myVideo.currentTime / myVideo.duration)*100);
 	});
-
-	/*
-		Change the language of the subtitles
-	*/
-	$('#control-eng, #control-pt, #control-no-sub').click(function () {
-		$('#collapseLanguage .well .btn').removeClass('active-lan');
-		$('#control-'+$(this).attr('lan')).addClass('active-lan');
-	})
 
 	// Video time slider
 	$("#actual-progress").slider({
@@ -69,9 +61,6 @@ function init_video_controls () {
 	});
 }
 
-function update_position (value) {
-	myVideo.currentTime = (value*myVideo.duration)/10;
-}
 
 function update_volume () {
     myVideo.volume = parseFloat(($('#control-volume-range').val()/100)).toFixed(1);
