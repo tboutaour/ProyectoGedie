@@ -30,16 +30,49 @@ function start_track () {
         gag_track.oncuechange = function() {
             var gagActiveCue = gag_track.activeCues[0];
             if (gagActiveCue){
-                var gagInfo = JSON.parse(gagActiveCue.text);
-                myVideo.pause();
-                document.getElementById("gagTitol").innerHTML = gagInfo.titol;
-                document.getElementById("gagImage").src=gagInfo.captura;
-                modal.style.display = "block";
+                var timeAux = (gagActiveCue.endTime-gagActiveCue.startTime)*1000;
+                setTimeout(function(){
+                    var gagInfo = JSON.parse(gagActiveCue.text);
+                    myVideo.pause();
+                    document.getElementById("gagTitol").innerHTML = gagInfo.titol;
+                    document.getElementById("gagImage").src=gagInfo.captura;
+                    modal.style.display = "block";
+                 }, timeAux);
             }
         };
 }
 function quitarModalyGuardar(valor) {
+        debugger;
+        var modal = document.getElementById('myModal');
         modal.style.display = "none";
         myVideo.play();
-        puntuacion = puntuación + valor;
+        puntuacion = puntuacion + valor;
+        actualizar_estrellas(puntuacion/pNumber);
+        actualizar_barras(valor);
+        pNumber = pNumber + 1;
+}
+
+function actualizar_estrellas(valor) {
+    debugger;
+    var estrellasLlenas = Math.trunc(valor);
+    for (i = 0; i < estrellasLlenas; i++) {
+        document.getElementById('estrella' + i.toString()).className = 'fas fa-star checked';
+    }
+    for (j = estrellasLlenas; j < 5; j++) {
+        document.getElementById('estrella' + j.toString()).className = 'fas fa-star';
+    }
+
+}
+
+function actualizar_barras(valor) {
+    for(i = 1; i<=5; i++){
+        var valorEtiqueta = document.getElementById('barra'+i+'val');
+        var numero = parseFloat(valorEtiqueta.innerHTML);
+        if (valor === i) {
+            numero = numero + 1;
+            valorEtiqueta.innerText = numero.toString();
+        }
+        var porcentaje = ((numero/ pNumber).toFixed(2))*100;
+        document.getElementById("bar"+i).style.width = porcentaje.toString()+"%";
+    }
 }
