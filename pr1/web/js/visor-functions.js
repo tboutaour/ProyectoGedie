@@ -1,6 +1,6 @@
 function init_video_controls () {
 	myVideo.addEventListener('loadedmetadata', function() {
-
+		$('#duration').text(get_normalized_time(myVideo.duration));
 	    $('#filter-btn').prop("disabled", false);
 	});
 
@@ -45,6 +45,7 @@ function init_video_controls () {
 	// Every time that changes the current time of the video
 	$('#mainVid').bind('timeupdate', function () {
 		$("#actual-progress").slider('value', (myVideo.currentTime / myVideo.duration)*100);
+		$('#actual-time').text(get_normalized_time(myVideo.currentTime));
 	});
 
 	// Video time slider
@@ -64,4 +65,16 @@ function init_video_controls () {
 
 function update_volume () {
     myVideo.volume = parseFloat(($('#control-volume-range').val()/100)).toFixed(1);
+}
+
+function get_normalized_time (totalSeconds) {
+	hours = Math.floor(totalSeconds / 3600);
+	totalSeconds %= 3600;
+	minutes = Math.floor(totalSeconds / 60);
+	seconds = totalSeconds % 60;
+	seconds = seconds.toFixed(0);
+	if (seconds.length == 1) seconds = '0' + seconds;
+	if (minutes < 9) minutes = '0' + minutes;
+
+	return ((hours > 0) ? hours + ':' : '') + ((minutes > 0) ? minutes + ':' : '00:') + seconds
 }
