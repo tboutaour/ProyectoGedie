@@ -4,6 +4,7 @@
     <title>Pràctica 1 GDIE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../fotos/peter_head.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -69,8 +70,8 @@
                         <label for="control-volume-range"></label><input id="control-volume-range" type="range" min="0"
                                                                          max="100" value="75">
                     </div>
-                    <div class="btn btn-default" id="tempsactual" >
-                        <span id="actual-time" >00:00</span> / <span id="duration"></span>
+                    <div class="btn btn-default" id="tempsactual">
+                        <span id="actual-time">00:00</span> / <span id="duration"></span>
                     </div>
                     <div>
                         <a id="control-stop" class="btn btn-default"><i class="fa fa-stop"></i></a>
@@ -78,68 +79,55 @@
                         <a id="control-expand" class="btn btn-default"><i class="fas fa-expand"></i></a>
                     </div>
                     <div>
-                        <a id="control-no-sub" class="btn btn-default active-lan" lang="no-sub"><i class="fa fa-ban"
-                                                                                                   aria-hidden="true"></i></a>
-                        <a id="control-en" class="btn btn-default set-subtitle" lang="en"><img src="./../fotos/flags/uk32.png" alt="English"></a>
-                        <a id="control-pt" class="btn btn-default set-subtitle" lang="pt"><img src="./../fotos/flags/portugal32.png" alt="Português"> </a>
+                        <a id="control-no-sub" class="btn btn-default active-lan" lang="no-sub">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                        <a id="control-en" class="btn btn-default set-subtitle" lang="en">
+                            <img src="./../fotos/flags/uk32.png" alt="English">
+                        </a>
+                        <a id="control-pt" class="btn btn-default set-subtitle" lang="pt">
+                            <img src="./../fotos/flags/portugal32.png" alt="Português">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Brian_Griffin')">
                 <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Brian_Griffin')">
-                    Brian Griffin
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Brian Griffin</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Chris_Griffin')">
                 <img id="Chris_Griffin" src="./../fotos/Chris_Griffin.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Chris_Griffin')">
-                    Chris Griffin
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Chris Griffin</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Lois_Griffin')">
                 <img id="Lois_Griffin" src="./../fotos/Lois_Griffin.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Lois_Griffin')">
-                    Lois Griffin
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Lois Griffin</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Meg_Griffin')">
                 <img id="Meg_Griffin" src="./../fotos/Meg_Griffin.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Meg_Griffin')">
-                    Meg Griffin
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Meg Griffin</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Peter_Griffin')">
                 <img id="Peter_Griffin" src="./../fotos/Peter_Griffin.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Peter_Griffin')">
-                    Peter Griffin
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Peter Griffin</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Stewie_Griffin')">
                 <img id="Stewie_Griffin" src="./../fotos/Stewie_Griffin.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Stewie_Griffin')">
-                    Stewie Griffin
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Stewie Griffin</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Cleveland_Brown')">
                 <img id="Cleveland_Brown" src="./../fotos/Cleveland_Brown.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Cleveland_Brown')">
-                    Cleveland Brown
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Cleveland Brown</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Glenn_Quagmire')">
                 <img id="Glenn_Quagmire" src="./../fotos/Glenn_Quagmire.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Glenn_Quagmire')">
-                    Glenn Quagmire
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Glenn Quagmire</button>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4" onclick="click_personatge('Joe_Swanson')">
                 <img id="Joe_Swanson" src="./../fotos/Joe_Swanson.png" height="100" width="80" alt="Image">
-                <button class="button button5" type="submit" name="learn" value="myimage" onclick="click_personatge('Joe_Swanson')">
-                    Joe Swanson
-                </button>
+                <button class="button button5" type="submit" name="learn" value="myimage">Joe Swanson</button>
             </div>
         </div>
     </div>
@@ -246,7 +234,7 @@
                         <br>
                         <br>
                         <p>Por tag</p>
-<label>
+                        <label>
                             <select>
                                 <option value="Dinámico">Se tienen que meter las opciones dinamicamente</option>
                             </select>
