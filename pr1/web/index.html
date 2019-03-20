@@ -55,7 +55,9 @@
     <div class="row">
         <div id="video-container" class="col-md-6">
             <video id="mainVid" poster="../fotos/preview-episodi.png">
+                <!-- Safari/Chrome support-->
                 <source src="../video/PDF_15x06.mp4" type='video/mp4;'/>
+                <!-- Firefox support -->
                 <source src="../video/PDF_16x06.oggtheora.ogv" type='video/ogv;'/>
                 <track label="English" kind="subtitles" srclang="en" src="../meta/subtitols/PDF_15x06_EN.vtt"><!--0-->
                 <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt"><!--1-->
@@ -63,6 +65,8 @@
                 <track label="Gags" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA_gags.vtt"><!--3-->
                 <track label="Castellano" kind="subtitles" srclang="es" src="../meta/subtitols/PDF_15x06_ES.vtt" default><!--4-->
                 <track label="Chino" kind="subtitles" srclang="xi" src="../meta/subtitols/PDF_15x06_XI.vtt"><!--5-->
+                <!-- Fallback message -->
+                Backup message in case video tag isn't supported.
             </video>
             <div id="video-controls">
                 <div id="video-progress">
@@ -101,6 +105,11 @@
                 </div>
             </div>
         </div>
+        <audio controls="controls">
+            <source src="../audio/theme_song.ogg" type="audio/ogg" />
+            <source src="../audio/theme_song.mp3" type="audio/mpeg" />
+            Backup message shown if the browser does not support the audio tag.
+        </audio>
         <div class="col-sm-6">
             <div class="col-sm-4" onclick="click_personatge('Brian_Griffin')">
                 <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png" height="100" width="80" alt="Image">
