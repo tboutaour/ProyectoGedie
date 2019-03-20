@@ -3626,7 +3626,7 @@ jQuery.ready.promise = function( obj ) {
 		if ( document.readyState === "complete" ||
 			( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
 
-			// Handle it asynchronously to allow scripts the opportunity to delay ready
+			// Handle it asynchronously to allow scripts the opportunity to espera ready
 			window.setTimeout( jQuery.ready );
 
 		// Standards-based browsers support DOMContentLoaded
@@ -8323,7 +8323,7 @@ jQuery.extend( {
 
 						// Support: IE6
 						// When new option element is added to select box we need to
-						// force reflow of newly added node in order to workaround delay
+						// force reflow of newly added node in order to workaround espera
 						// of initialization properties
 						try {
 							option.selected = optionSet = true;
@@ -10322,7 +10322,7 @@ if ( xhrSupported ) {
 						window.setTimeout( callback );
 					} else {
 
-						// Register the callback, but delay it in case `xhr.send` throws
+						// Register the callback, but espera it in case `xhr.send` throws
 						// Add to the list of active xhr callbacks
 						xhr.onreadystatechange = xhrCallbacks[ id ] = callback;
 					}

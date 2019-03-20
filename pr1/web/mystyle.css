@@ -18,7 +18,7 @@ footer {
 
 .navbar {
     margin-bottom: 0;
-    background-color: whitesmoke;
+    background-color: lightslategrey;
     z-index: 9999;
     border: 0;
     font-family: Mont serrat, sans-serif;
@@ -28,7 +28,7 @@ footer {
 }
 
 .navbar li a, .navbar .navbar-brand {
-    color: black !important;
+    color: white !important;
 }
 
 /*Color of hover boton*/
@@ -65,8 +65,6 @@ footer {
 .navbar-toggle .icon-bar {
     background: darkgrey !important;
 }
-
-
 
 #Personatges img{
     opacity: 0.1;

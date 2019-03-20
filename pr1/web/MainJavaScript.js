@@ -51,3 +51,21 @@ function buscar() {
         }
     }
 }
+
+const espera = ( function() {
+    let timer = 0;
+    return function(callback, ms) {
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+    };
+})();
+
+function destaca (){
+    //canvia a groc
+    document.getElementById("peu").style.background="#ffff66";
+    //canvia al color original despres d'1 segon
+    espera(function(){
+        document.getElementById("peu").style.background="#f2f2f2";
+    }, 1000 ); // end espera
+
+}

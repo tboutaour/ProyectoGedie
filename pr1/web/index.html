@@ -23,9 +23,9 @@
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Sobre la práctica</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li class="active"><a href="#">Principal</a></li>
+                <li><a href="https://github.com/tboutaour/ProyectoGedie" target="_blank">Github de la práctica</a></li>
+                <li><a href="#peu" onclick="destaca()">Contacto</a></li>
             </ul>
         </div>
     </div>
@@ -54,7 +54,7 @@
 <div class="container">
     <div class="row">
         <div id="video-container" class="col-md-6">
-            <video id="mainVid" poster="../fotos/preview-episodi.png">
+            <video id="mainVid" poster="../fotos/preview-episodi.png" onclick="playpause()">
                 <!-- Safari/Chrome support-->
                 <source src="../video/PDF_15x06.mp4" type='video/mp4;'/>
                 <!-- Firefox support -->
@@ -63,7 +63,7 @@
                 <track label="Português" kind="subtitles" srclang="pt" src="../meta/subtitols/PDF_15x06_PT.vtt"><!--1-->
                 <track label="Personajes" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA.vtt"><!--2-->
                 <track label="Gags" kind="metadata" srclang="es" src="../meta/PDF_15x06_EXTRA_gags.vtt"><!--3-->
-                <track label="Castellano" kind="subtitles" srclang="es" src="../meta/subtitols/PDF_15x06_ES.vtt" default><!--4-->
+                <track label="Castellano" kind="subtitles" srclang="es" src="../meta/subtitols/PDF_15x06_ES.vtt"><!--4-->
                 <track label="Chino" kind="subtitles" srclang="xi" src="../meta/subtitols/PDF_15x06_XI.vtt"><!--5-->
                 <!-- Fallback message -->
                 Backup message in case video tag isn't supported.
@@ -86,9 +86,6 @@
                         <a id="control-expand" class="btn btn-default"><i class="fas fa-expand"></i></a>
                     </div>
                     <div>
-                        <a id="control-no-sub" class="btn btn-default active-lan" lang="no-sub">
-                            <i class="fa fa-ban" aria-hidden="true"></i>
-                        </a>
                         <a id="control-en" class="btn btn-default set-subtitle" lang="en">
                             <img src="./../fotos/flags/uk32.png" alt="English">
                         </a>
@@ -101,15 +98,14 @@
                         <a id="control-es" class="btn btn-default set-subtitle" lang="es">
                             <img src="./../fotos/flags/spain32.png" alt="Castellà">
                         </a>
+                        <a id="control-no-sub" class="btn btn-default active-lan" lang="no-sub">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-        <audio controls="controls">
-            <source src="../audio/theme_song.ogg" type="audio/ogg" />
-            <source src="../audio/theme_song.mp3" type="audio/mpeg" />
-            Backup message shown if the browser does not support the audio tag.
-        </audio>
+
         <div class="col-sm-6">
             <div class="col-sm-4" onclick="click_personatge('Brian_Griffin')">
                 <img id="Brian_Griffin" src="./../fotos/Brian_Griffin.png" height="100" width="80" alt="Image">
@@ -159,11 +155,21 @@
             <div class="col-sm-6" id="Info">
                 <!--Título del capítulo-->
                 <div class="well">
-                    <p id="ho2">Titol episodi</p>
+                    <h2>"Hot Shots" / "Espabilados"</h2>
                 </div>
                 <!--Información de interes de la escena-->
                 <div class="well">
-                    <p>Info detallada</p>
+                    <p class="text-justify">
+                        Temporada: <b>15</b> <br>
+                        Episodio: <b>6</b> <br>
+                        Dirigido por <b>John Holmquist</b> <br>
+                        Escrito por <b>David A. Goodman</b> <br>
+                        Código de producción: <b>EACX03</b> <br>
+                        Emisión (E.E.U.U): <b>13 de noviembre, 2016</b> <br>
+                        Emisión (España): <b>10 de julio, 2017</b> <br>
+                        Emisión (Internacional): <b>30 de mayo, 2017</b> <br>
+                        <a href="https://en.wikipedia.org/wiki/Hot_Shots_(Family_Guy)" target="_blank">Más info</a>
+                    </p>
                 </div>
                 <!--Valoración-->
                 <div class="well">
@@ -173,7 +179,7 @@
                     <span id="estrella2" class="fas fa-star checked"></span>
                     <span id="estrella3" class="fas fa-star checked"></span>
                     <span id="estrella4" class="fas fa-star"></span>
-                </div>
+
                 <!--Valoración 2-->
                 <div class="row">
                     <div class="side">
@@ -232,14 +238,31 @@
                         <div id="barra1val">0</div>
                     </div>
                 </div>
-
+            </div>
             </div>
             <div class="col-sm-6">
                 <!--Filtro de búsqueda-->
                 <div class="well">
-                    <h4>Filtro de busqueda por Tag</h4>
+                    <h3>Búsqueda por Tag</h3>
+                    <br>
                     <input id="tag-filters" type="text" placeholder="Search..">
                     <button id="tag-filter">Filtra</button>
+                </div>
+                <div class="well">
+                    <h3>Canción original de la serie</h3>
+                    <audio controls="controls">
+                        <source src="../audio/theme_song.ogg" type="audio/ogg" />
+                        <source src="../audio/theme_song.mp3" type="audio/mpeg" />
+                        Backup message shown if the browser does not support the audio tag.
+                    </audio>
+                </div>
+                <div class="well">
+                    <h3>Canción a capela de la serie</h3>
+                    <audio controls="controls">
+                        <source src="../audio/theme_song_live.ogg" type="audio/ogg" />
+                        <source src="../audio/theme_song_live.mp3" type="audio/mpeg" />
+                        Backup message shown if the browser does not support the audio tag.
+                    </audio>
                 </div>
             </div>
         </div>
@@ -249,10 +272,11 @@
 </div>
 
 <div class="container text-center">
-    <div class="well">
+    <div class="well" id="peu">
         <div class="row">
             <!--Peu de la pàgina-->
                 <h3>Práctica realizada por:</h3>
+            <br>
                 <h5>A. Antonio Boutaour Sanchez</h5>
                 <a class="github-button" href="https://github.com/tboutaour" data-size="large"
                    aria-label="Follow @tboutaour on GitHub">Follow @tboutaour</a>

@@ -76,3 +76,11 @@ function get_normalized_time (totalSeconds) {
 	if (minutes < 9) minutes = '0' + minutes;
 	return ((hours > 0) ? hours + ':' : '') + ((minutes > 0) ? minutes + ':' : '00:') + seconds
 }
+
+function playpause (){
+	if (myVideo.paused) {
+		myVideo.play();
+	}else {
+		myVideo.pause();
+	}
+}
