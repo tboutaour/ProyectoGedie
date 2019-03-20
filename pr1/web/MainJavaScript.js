@@ -33,3 +33,21 @@ function click_personatge(personatge) {
         click_personatge(personatge)
     }
 }
+
+function buscar() {
+    var tag = document.getElementById("tag-filters").value;
+    var cue;
+    for (l = 0; l < scene_track.cues.length; l++){
+        cue = scene_track.cues[l];
+        var sceneInfo = JSON.parse(cue.text);
+        if (sceneInfo.tags.includes(tag)){
+
+            myVideo.play();
+            myVideo.currentTime=scene_track.cues[l].startTime.toString();
+            console.log(myVideo.currentTime);
+            //ja que el video s'iniciiara, canviar el boto principal de Pause a Play
+            $('#control-play').find('i').removeClass('fa-play').addClass('fa-pause');
+            break;
+        }
+    }
+}

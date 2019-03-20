@@ -76,3 +76,14 @@ function actualizar_barras(valor) {
         document.getElementById("bar"+i).style.width = porcentaje.toString()+"%";
     }
 }
+
+$('#tag-filter').click(function () {
+    debugger;
+    buscar();
+});
+
+
+
+
+
+
