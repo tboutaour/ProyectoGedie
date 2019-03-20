@@ -2,6 +2,8 @@ video {
 	z-index: 200;
 	width: 100%;
 	position: relative;
+	border-radius:10px;
+	overflow:hidden;
 }
 
 #video-container #video-controls {
@@ -11,18 +13,14 @@ video {
     background-position: 0 35%;
     box-shadow: 0 -17px 40px -20px rgba(0,0,0,0.83);
 	width: 100%;
-
 	padding: 10px 0;
-
-	margin-top: -60px;
-	transform: translateY(-23px);
 	transition: all .9s ease-in-out;
 	opacity: 0; /* al principi estarà ocult */
-	z-index: 300
+	z-index: 200; /* per davant del video */
 }
 
 #video-container:hover #video-controls {
-	transform: translateY(-25px);
+	border-radius:10px;
 	transition: all .2s ease-in-out;
 	opacity: 1;
 }
@@ -99,7 +97,3 @@ video {
 	top: -9px;
 	left: 0px;
 }
-
-
-
-
