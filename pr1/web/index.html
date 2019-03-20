@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="css/visor.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
-<body>
+<body id="fons">
 <!--Barra de navegació-->
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -26,6 +26,7 @@
                 <li class="active"><a href="#">Principal</a></li>
                 <li><a href="https://github.com/tboutaour/ProyectoGedie" target="_blank">Github de la práctica</a></li>
                 <li><a href="#peu" onclick="destaca()">Contacto</a></li>
+                <li style="margin-top: 5px"><button class="button button5" onClick="apagaLlum(this)">Apagar la luz</button></li>
             </ul>
         </div>
     </div>
@@ -148,9 +149,9 @@
     <hr>
 </div>
 
-<div class="container text-center">
-    <div class="well">
-        <div class="row">
+<div class="container text-center" >
+    <div class="well" id="idwell">
+        <div class="row" id="idrow">
             <!--Imatges dels personatges-->
             <div class="col-sm-6" id="Info">
                 <!--Título del capítulo-->
@@ -297,6 +298,5 @@
 <script src="js/functions.js"></script>
 </body>
 <script src="./MainJavaScript.js"></script>
-<script src="./videoControls.js"></script>
 <script src="./tracks.js"></script>
 </html>

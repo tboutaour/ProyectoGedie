@@ -67,5 +67,31 @@ function destaca (){
     espera(function(){
         document.getElementById("peu").style.background="#f2f2f2";
     }, 1000 ); // end espera
+}
 
+const fons = document.getElementById('fons');
+fons.style.background = 'white';
+
+const fonsWell = document.getElementById('idwell');
+const color_fonsWell = fonsWell.style.background;
+
+const fonsrow = document.getElementById('idrow');
+const color_fonsrow = fonsrow.style.background;
+
+function apagaLlum(o) {
+    if (fons.style.background === 'white') {
+        //apagar
+        fons.style.background = 'black';
+        fonsWell.style.background = '#1a1a1a';
+        fonsrow.style.background = '##595959';
+        o.innerHTML = 'Encender luces';
+
+    }
+    else {
+        //encendre
+        fons.style.background = 'white';
+        fonsWell.style.background = color_fonsWell;
+        fonsrow.style.background = color_fonsrow;
+        o.innerHTML = 'Apagar luces';
+    }
 }
