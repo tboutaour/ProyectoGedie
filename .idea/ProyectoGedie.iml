@@ -13,5 +13,6 @@
     <orderEntry type="library" name="buttons" level="application" />
     <orderEntry type="library" name="popper" level="application" />
     <orderEntry type="library" name="aframe" level="application" />
+    <orderEntry type="library" name="dash.all" level="application" />
   </component>
 </module>
