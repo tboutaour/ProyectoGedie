@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Visor 360º GDIE P2</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <video id="r12a240" autoplay crossorigin loop="true" src="https://ltim.uib.es/files/palma360/r12a/240.mp4"></video>
+        <video id="r12a360" autoplay crossorigin loop="true" src="https://ltim.uib.es/files/palma360/r12a/360.mp4"></video>
+        <video id="r12a540" autoplay crossorigin loop="true" src="https://ltim.uib.es/files/palma360/r12a/540.mp4"></video>
+        <video id="r12a720" autoplay crossorigin loop="true" src="https://ltim.uib.es/files/palma360/r12a/720.mp4"></video>
+        <video controls id="r12a1080" autoplay crossorigin loop="true" src="https://ltim.uib.es/files/palma360/r12a/1080.mp4"></video>
+        <video id="r12a2160" autoplay crossorigin loop="true" src="https://ltim.uib.es/files/palma360/r12a/2160.mp4"></video>
+    </a-assets>
+    <a-sphere class="clickable" color="red" radius="0.1" position="0 1.6 -1.5" clickable></a-sphere>
+    <a-sphere class="clickable" color="green" radius="0.1" position="3 1.6 -1.5" clickable></a-sphere>
+    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+
+    <!--mètode que insereixi el src maxim segons la capacitat de la xarxa i l'ordenador-->
+    <a-videosphere src="#r12a1080"></a-videosphere>
+</a-scene>
+</body>
+</html>

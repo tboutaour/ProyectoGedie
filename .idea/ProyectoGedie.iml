@@ -12,5 +12,6 @@
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="buttons" level="application" />
     <orderEntry type="library" name="popper" level="application" />
+    <orderEntry type="library" name="aframe" level="application" />
   </component>
 </module>
