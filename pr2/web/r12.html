@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Visor 360º GDIE P2</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <video data-dashjs-player id="r12a" autoplay crossorigin src="https://ltim.uib.es/files/palma360/r12a/dash.mpd"></video>
+    </a-assets>
+    <a-sphere class="clickable" color="red" radius="0.1" position="0 1.6 -1.5" clickable></a-sphere>
+    <a-sphere class="clickable" color="green" radius="0.1" position="3 1.6 -1.5" clickable></a-sphere>
+    <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+
+    <a-videosphere src="#r12a"></a-videosphere>
+</a-scene>
+</body>
+</html>
