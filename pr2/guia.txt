@@ -1,0 +1,29 @@
+les nostres rutes: r12 i r20
+----------------------------------
+
+r12
+
+    p10 enllaça amb
+        p18: https://ltim.uib.es/files/palma360/p18/dash.mpd
+        r4b: https://ltim.uib.es/files/palma360/r4b/dash.mpd
+        r12b: https://ltim.uib.es/files/palma360/r12b/dash.mpd
+
+    p20 enllaça amb
+        r12a: https://ltim.uib.es/files/palma360/r12a/dash.mpd
+        r11b: https://ltim.uib.es/files/palma360/r11b/dash.mpd
+        r18a: https://ltim.uib.es/files/palma360/r18a/dash.mpd
+        r18b: https://ltim.uib.es/files/palma360/r18b/dash.mpd
+
+----------------------------------
+
+r20
+
+    p32 enllaça amb
+        p5: https://ltim.uib.es/files/palma360/p5/dash.mpd
+        r21a: https://ltim.uib.es/files/palma360/r21a/dash.mpd
+        ??? r20b ??? :
+
+    p5 enllaça amb
+        r2b: https://ltim.uib.es/files/palma360/r2b/dash.mpd
+        r10b: https://ltim.uib.es/files/palma360/r10b/dash.mpd
+        r20a: https://ltim.uib.es/files/palma360/r20a/dash.mpd
