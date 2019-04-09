@@ -28,6 +28,7 @@
         switch(window.location.hash) {
             case "#1":
                 console.log("case 1 del switch");
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r12b/720.mp4";
                 break;
             case "#2":
                 console.log("case 2 del switch");
@@ -40,11 +41,10 @@
 
 <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
     <a-assets>
-        // TODO: -canviar 360.mp4 per dash.mpd
-        <video data-dashjs-player id="r12a" autoplay crossorigin loop
-               src="https://ltim.uib.es/files/palma360/p10/360.mp4"></video>
+        <video data-dashjs-player id="idsrc" autoplay crossorigin loop muted
+               src="https://ltim.uib.es/files/palma360/p10/720.mp4"></video>
     </a-assets>
-    <a-videosphere src="#r12a"></a-videosphere>
+    <a-videosphere src="#idsrc"></a-videosphere>
     <a-sphere class="clickable" color="green" radius="0.5" position="3 1.6 -1.5" clickable></a-sphere>
     <a-entity camera="" look-controls="" position="0 1.6 0" rotation="">
         <a-entity cursor="" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
@@ -53,25 +53,6 @@
     </a-entity>
     <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1366" height="635" style=""></canvas>
     <div class="a-loader-title" style="display: none;">GDIE 360º</div>
-    <div class="a-enter-vr" aframe-injected="">
-        <button class="a-enter-vr-button"
-                title="Enter VR mode with a headset or fullscreen mode on a desktop."
-                aframe-injected=""></button>
-    </div>
-    <div class="a-orientation-modal a-hidden" aframe-injected="">
-        <button aframe-injected="">Exit VR</button>
-    </div>
-    <a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity>
-    <a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
-</a-scene>
-
-<style id="extraClass">.extraClassAspect {
-    -webkit-transform: scaleX(1) !important;
-}
-
-.extraClassCrop {
-    -webkit-transform: scale(1) !important;
-}</style>
 </body>
 
 </html>
