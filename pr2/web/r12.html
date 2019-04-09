@@ -7,32 +7,42 @@
     <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 </head>
 <body>
-<!--al fer click a la esfera verda, redireccionar la web a una altra ruta-->
+<!--al fer click a la esfera verda, redireccionar la web-->
 <script>
     AFRAME.registerComponent('clickable', {
         init: function () {
             this.index = 0;
             this.el.addEventListener('click', e => {
-                // TODO: -canviar aquesta url per la correcta
-                window.location.href = "https://alumnes-ltim.uib.es/gdie1907/pr2/web/r20.html";
+                // TODO: elegir quin hash segons la bolla clicada
+                window.location.hash="1";
             });
             this.video = document.querySelector('video');
         }
     });
 </script>
 
-<!--listener hashstagechange-->
+<!--listener hashstagechange: al canviar de hash, realitzar unes accions determinades-->
 <script>
     window.addEventListener('hashchange', function (e) {
-        document.getElementById('r12a').src = "https://ltim.uib.es/files/palma360/p18/dash.mpd";
+        console.log("Accions a partir del canvi de hash: "+ window.location.hash);
+        switch(window.location.hash) {
+            case "#1":
+                console.log("case 1 del switch");
+                break;
+            case "#2":
+                console.log("case 2 del switch");
+                break;
+            default:
+            console.log("default case del switch");
+        }
     });
 </script>
 
 <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
     <a-assets>
         // TODO: -canviar 360.mp4 per dash.mpd
-        <video data-dashjs-player id="r12a" autoplay crossorigin
-               src="https://ltim.uib.es/files/palma360/r12a/360.mp4"></video>
+        <video data-dashjs-player id="r12a" autoplay crossorigin loop
+               src="https://ltim.uib.es/files/palma360/p10/360.mp4"></video>
     </a-assets>
     <a-videosphere src="#r12a"></a-videosphere>
     <a-sphere class="clickable" color="green" radius="0.5" position="3 1.6 -1.5" clickable></a-sphere>
