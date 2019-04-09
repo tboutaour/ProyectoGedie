@@ -13,8 +13,12 @@
         init: function () {
             this.index = 0;
             this.el.addEventListener('click', e => {
-                // TODO: elegir quin hash segons la bolla clicada
-                window.location.hash="1";
+                if (this.el.id === "bola1") {
+                    window.location.hash = "1";
+                }else{
+                    console.log(this.el.id);
+                    window.location.hash = "2";
+                }
             });
             this.video = document.querySelector('video');
         }
@@ -29,9 +33,13 @@
             case "#1":
                 console.log("case 1 del switch");
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r12b/720.mp4";
+                document.getElementById("bola1").setAttribute('visible','false');
+                document.getElementById("bola2").setAttribute('visible','false');
                 break;
             case "#2":
                 console.log("case 2 del switch");
+                document.getElementById("bola1").setAttribute('visible','false');
+                document.getElementById("bola2").setAttribute('visible','false');
                 break;
             default:
             console.log("default case del switch");
@@ -44,8 +52,9 @@
         <video data-dashjs-player id="idsrc" autoplay crossorigin loop muted
                src="https://ltim.uib.es/files/palma360/p10/720.mp4"></video>
     </a-assets>
-    <a-videosphere src="#idsrc"></a-videosphere>
-    <a-sphere class="clickable" color="green" radius="0.5" position="3 1.6 -1.5" clickable></a-sphere>
+    <a-videosphere rotation="0 -90 0" src="#idsrc"></a-videosphere>
+    <a-sphere id="bola2" class="clickable" color="red" radius="1.5" position="45 1.6 0"clickable ></a-sphere>
+    <a-sphere id="bola1" class="clickable" color="green" radius="1.2" position="0 2 -20" clickable></a-sphere>
     <a-entity camera="" look-controls="" position="0 1.6 0" rotation="">
         <a-entity cursor="" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                   material="color: black; shader: flat" raycaster="">
