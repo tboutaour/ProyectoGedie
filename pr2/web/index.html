@@ -55,6 +55,9 @@
                 document.getElementById("r18b").setAttribute('visible','true');
                 document.getElementById("r12a").setAttribute('visible','true');
                 <!--Aqui se tienen que poner a false todos los puntos-->
+                document.getElementById("r12b").setAttribute('visible','false');
+                document.getElementById("p18").setAttribute('visible','false');
+                document.getElementById("r4b").setAttribute('visible','false');
                 break;
             case "#r12a":
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r12b/720.mp4";
@@ -72,6 +75,7 @@
                 <!--Aqui se tienen que poner a false todos los puntos-->
                 break;
             case "#r20b":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r20b/720.mp4";
                 document.getElementById("r21a").setAttribute('visible','false');
                 document.getElementById("p5").setAttribute('visible','false');
                 <!--Aqui se tienen que poner a false todos los puntos-->
@@ -85,14 +89,13 @@
                 <!--Aqui se tienen que poner a false todos los puntos-->
                 break;
             case "#r20a":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r20a/720.mp4";
                 document.getElementById("r11b").setAttribute('visible','false');
                 document.getElementById("r18a").setAttribute('visible','false');
                 document.getElementById("r18b").setAttribute('visible','false');
                 document.getElementById("r12a").setAttribute('visible','false');
                 break;
-            <!-----------------------------------------------------------
-            A partir de aquí son cosas de otros. Quitamos nuestros puntos.
-            -------------------------------------------------------------->
+            <!--A partir de aquí son cosas de otros. Quitamos nuestros puntos.-->
             <!--p10-->
             case "#p18":
                 <!--Aqui se tienen que poner a false todos los puntos-->
@@ -134,32 +137,36 @@
 <a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
     <a-assets>
         <video data-dashjs-player id="idsrc" autoplay crossorigin loop muted
-               src="https://ltim.uib.es/files/palma360/p10/720.mp4"></video>
+               src="https://ltim.uib.es/files/palma360/p10/720.mp4">
+        </video>
     </a-assets>
     <a-videosphere rotation="0 -90 0" src="#idsrc"></a-videosphere>
+
     <!--p10-->
-    <a-sphere id="p18" class="clickable" color="red" radius="1.5" position="45 1.6 0"   clickable ></a-sphere>
-    <a-sphere id="r12b" class="clickable" color="green" radius="1.2" position="0 2 -20" clickable></a-sphere>
-    <a-sphere id="r4b" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="p18"  class="clickable" color="red"    radius="1.5" position="45 1.6 0"   clickable></a-sphere>
+    <a-sphere id="r12b" class="clickable" color="green"  radius="1.2" position="0 2 -20"    clickable></a-sphere>
+    <a-sphere id="r4b"  class="clickable" color="orange" radius="1.5" position="-45 1.6 0"  clickable></a-sphere>
+
     <!--p20-->
-    <a-sphere id="r11b" class="clickable" color="red" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <a-sphere id="r18a" class="clickable" color="green" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <a-sphere id="r18b" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <a-sphere id="r12a" class="clickable" color="blue" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <!--p32-->
-    <a-sphere id="r21a" class="clickable" color="red" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <a-sphere id="p5" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <a-sphere id="p20b" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
-    <!--p5-->
-    <a-sphere id="r2b" class="clickable" color="red" radius="1.5" position="45 1.6 0" clickable></a-sphere>
-    <a-sphere id="r10b" class="clickable" color="green" radius="1.5" position="-0 2 -20" clickable></a-sphere>
-    <a-sphere id="r20a" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="r11b" color="red"    radius="1.5" position="45 1.6 0"   visible="false"></a-sphere>
+    <a-sphere id="r18a" color="green"  radius="1.5" position="0 2 -20"    visible="false"></a-sphere>
+    <a-sphere id="r18b" color="orange" radius="1.5" position="0 5 -20"    visible="false"></a-sphere>
+    <a-sphere id="r12a" color="blue"   radius="1.5" position="0 7 -20"    visible="false"></a-sphere>
+
+    <a-sphere id="r21a" color="red"    radius="1.5" position="-45 1.6 0"  visible="false"></a-sphere>
+    <a-sphere id="p5"   color="orange" radius="1.5" position="-45 1.6 0"  visible="false"></a-sphere>
+    <a-sphere id="p20b" color="orange" radius="1.5" position="-45 1.6 0"  visible="false"></a-sphere>
+
+    <a-sphere id="r2b"  color="red"    radius="1.5" position="45 1.6 0"   visible="false"></a-sphere>
+    <a-sphere id="r10b" color="green"  radius="1.5" position="-0 2 -20"   visible="false"></a-sphere>
+    <a-sphere id="r20a" color="orange" radius="1.5" position="-45 1.6 0"  visible="false"></a-sphere>
 
     <a-entity camera="" look-controls="" position="0 1.6 0" rotation="">
         <a-entity cursor="" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                   material="color: black; shader: flat" raycaster="">
         </a-entity>
     </a-entity>
+
     <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1366" height="635" style=""></canvas>
     <div class="a-loader-title" style="display: none;">GDIE 360º</div>
 </body>
