@@ -3,12 +3,165 @@
 <head>
     <meta charset="utf-8">
     <title>Visor 360º GDIE P2</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
 </head>
 <body>
-<h3>Elegeix la ruta</h3>
-<p>Nota: aquesta pàg es provisional</p>
-<a href="r12.html">r12</a>
-<br>
-<a href="r20.html">r20</a>
+<!--al fer click a la esfera verda, redireccionar la web-->
+<script>
+    AFRAME.registerComponent('clickable', {
+        init: function () {
+            this.index = 0;
+            this.el.addEventListener('click', e => {
+                if (this.el.id === "r12b") {
+                    window.location.hash = "r12b";
+                }else if (this.el.id === "p18"){
+                    console.log(this.el.id);
+                    window.location.hash = "p18";
+                }else if (this.el.id === "r4b"){
+                    console.log(this.el.id);
+                    window.location.hash = "r4b";
+                }
+            });
+            this.video = document.querySelector('video');
+        }
+    });
+</script>
+
+<!--listener hashstagechange: al canviar de hash, realitzar unes accions determinades-->
+<script>
+    window.addEventListener('hashchange', function (e) {
+        console.log("Accions a partir del canvi de hash: "+ window.location.hash);
+        switch(window.location.hash) {
+            <!--Primera ruta-->
+            case "#p10":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p10/720.mp4";
+                document.getElementById("r12b").setAttribute('visible','true');
+                document.getElementById("p18").setAttribute('visible','true');
+                document.getElementById("r4b").setAttribute('visible','true');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r12b":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r12b/720.mp4";
+                document.getElementById("r12b").setAttribute('visible','false');
+                document.getElementById("p18").setAttribute('visible','false');
+                document.getElementById("r4b").setAttribute('visible','false');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#p20":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p20/720.mp4"; //Ruta d'altre
+                document.getElementById("r11b").setAttribute('visible','true');
+                document.getElementById("r18a").setAttribute('visible','true');
+                document.getElementById("r18b").setAttribute('visible','true');
+                document.getElementById("r12a").setAttribute('visible','true');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r12a":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r12b/720.mp4";
+                document.getElementById("r12b").setAttribute('visible','false');
+                document.getElementById("p18").setAttribute('visible','false');
+                document.getElementById("r4b").setAttribute('visible','false');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            <!--Segunda ruta-->
+
+            case "#p32":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p32/720.mp4";
+                document.getElementById("r21a").setAttribute('visible','true');
+                document.getElementById("p5").setAttribute('visible','true');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r20b":
+                document.getElementById("r21a").setAttribute('visible','false');
+                document.getElementById("p5").setAttribute('visible','false');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#p5":
+                document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p5/720.mp4";
+                document.getElementById("r11b").setAttribute('visible','true');
+                document.getElementById("r18a").setAttribute('visible','true');
+                document.getElementById("r18b").setAttribute('visible','true');
+                document.getElementById("r12a").setAttribute('visible','true');
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r20a":
+                document.getElementById("r11b").setAttribute('visible','false');
+                document.getElementById("r18a").setAttribute('visible','false');
+                document.getElementById("r18b").setAttribute('visible','false');
+                document.getElementById("r12a").setAttribute('visible','false');
+                break;
+            <!-----------------------------------------------------------
+            A partir de aquí son cosas de otros. Quitamos nuestros puntos.
+            -------------------------------------------------------------->
+            <!--p10-->
+            case "#p18":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r4b":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+
+
+            <!--p20-->
+            case "#r11b":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r18a":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r18b":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+
+            <!--p32-->
+            case "#r21a":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+
+            <!--p5-->
+            case "#r2b":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            case "#r10b":
+                <!--Aqui se tienen que poner a false todos los puntos-->
+                break;
+            default:
+            console.log("default case del switch");
+        }
+    });
+</script>
+
+<a-scene inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
+    <a-assets>
+        <video data-dashjs-player id="idsrc" autoplay crossorigin loop muted
+               src="https://ltim.uib.es/files/palma360/p10/720.mp4"></video>
+    </a-assets>
+    <a-videosphere rotation="0 -90 0" src="#idsrc"></a-videosphere>
+    <!--p10-->
+    <a-sphere id="p18" class="clickable" color="red" radius="1.5" position="45 1.6 0"   clickable ></a-sphere>
+    <a-sphere id="r12b" class="clickable" color="green" radius="1.2" position="0 2 -20" clickable></a-sphere>
+    <a-sphere id="r4b" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <!--p20-->
+    <a-sphere id="r11b" class="clickable" color="red" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="r18a" class="clickable" color="green" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="r18b" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="r12a" class="clickable" color="blue" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <!--p32-->
+    <a-sphere id="r21a" class="clickable" color="red" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="p5" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <a-sphere id="p20b" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+    <!--p5-->
+    <a-sphere id="r2b" class="clickable" color="red" radius="1.5" position="45 1.6 0" clickable></a-sphere>
+    <a-sphere id="r10b" class="clickable" color="green" radius="1.5" position="-0 2 -20" clickable></a-sphere>
+    <a-sphere id="r20a" class="clickable" color="orange" radius="1.5" position="-45 1.6 0" clickable></a-sphere>
+
+    <a-entity camera="" look-controls="" position="0 1.6 0" rotation="">
+        <a-entity cursor="" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat" raycaster="">
+        </a-entity>
+    </a-entity>
+    <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1366" height="635" style=""></canvas>
+    <div class="a-loader-title" style="display: none;">GDIE 360º</div>
 </body>
+
 </html>
