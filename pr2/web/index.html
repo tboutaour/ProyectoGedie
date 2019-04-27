@@ -166,6 +166,12 @@
     <a-sphere id="r10b" color="green"  radius="1.5" position="-0 2 -20"   visible="false"></a-sphere>
     <a-sphere id="r20a" color="orange" radius="1.5" position="-45 1.6 0"  visible="false"></a-sphere>
 
+<!--    prova bernt-->
+    <a-sphere color="green" material="" radius="5" geometry="" id="bola1" visible="" position=""></a-sphere>
+    <a-text value="Art Center 4 Gats" text="" width="100" id="bola1-t" look-at="" visible="" position=""></a-text>
+    <a-sphere color="green" material="" radius="5" geometry="" id="bola2" visible="" position=""></a-sphere>
+    <a-text value="Hostel Pura Vida" text="" width="100" id="bola2-t" look-at="" visible="" position=""></a-text>
+
     <a-entity camera="" look-controls="" position="0 1.6 0" rotation="">
         <a-entity cursor="" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
                   material="color: black; shader: flat" raycaster="">
@@ -174,6 +180,16 @@
 
     <canvas class="a-canvas a-grab-cursor" data-aframe-canvas="true" width="1366" height="635" style=""></canvas>
     <div class="a-loader-title" style="display: none;">GDIE 360º</div>
+    <div class="a-enter-vr" aframe-injected="">
+        <button class="a-enter-vr-button"
+                title="Enter VR mode with a headset or fullscreen mode on a desktop. Visit https://webvr.rocks or https://webvr.info for more information."
+                aframe-injected=""></button>
+    </div>
+    <div class="a-orientation-modal a-hidden" aframe-injected="">
+        <button aframe-injected="">Exit VR</button>
+    </div>
+    <a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity>
+    <a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
     </a-scene>
 </body>
 </html>
