@@ -15,14 +15,12 @@ function creacioPunt(nombre,color,xcomp,ycomp,zcomp) {
 function creacioText(text,xcomp,ycomp,zcomp){
     var sceneEl = document.querySelector('#punts');
     var boxEl = document.createElement('a-text');
-    boxEl.setAttribute('id',text);
-    boxEl.setAttribute('width',15);
-    boxEl.setAttribute('rotation',{x:0,y:90,z:-2});
-    boxEl.setAttribute('value',text);
+    boxEl.setAttribute('value',text );
+    boxEl.setAttribute('text','' );
+    boxEl.setAttribute('width','15' );
     boxEl.setAttribute('position', {x: xcomp, y:ycomp, z:zcomp});
-    boxEl.setAttribute('text','');
+    boxEl.setAttribute('rotation', {x: 0.000, y:180.000, z:0.000});
     sceneEl.appendChild(boxEl);
-
 }
 
 function initialize(){
@@ -56,9 +54,10 @@ function initialize(){
             case "#p32":
                 <!--Aquesta url sera de companys-->
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p32/720.mp4";
-
-                creacioText("p5",-3,-1,40);
+                creacioPunt("p5",'#37c7ef',-3,0,40);
+                creacioText("p5",-0.800,0.000,15);
                 creacioPunt("r21a",'#ef2e2c',10,2,0);
+
                 creacioPunt("r20b",'#efdd38',2,0,30);
 
                 break;
