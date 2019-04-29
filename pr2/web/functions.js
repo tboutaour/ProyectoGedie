@@ -25,12 +25,10 @@ function creacioText(text,xcomp,ycomp,zcomp,xrot,yrot,zrot){
 
 function initialize(){
     $(window).on('hashchange', function (e) {
-        var NodePunts = document.querySelector('#punts');
+/*        var NodePunts = document.querySelector('#punts');
         while(NodePunts.hasChildNodes()){
             NodePunts.removeChild(NodePunts.lastChild);
-        }
-        debugger;
-
+        }*/
         console.log("Accions a partir del canvi de hash: "+ window.location.hash);
         switch(window.location.hash) {
             <!--Configuración des P10-->
