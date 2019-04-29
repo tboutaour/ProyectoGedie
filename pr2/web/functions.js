@@ -36,11 +36,11 @@ function initialize(){
             <!--Configuración des P10-->
             case "#p10":
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p10/720.mp4";
-                creacioPunt("p18",'#EF2D5E',45,1.6,-1);
+                creacioPunt("p18",'#109bef',45,1.6,-1);
                 creacioText("p18",25,0.6,-1,0,-90,0);
-                creacioPunt("r12b",'#2eef4d',0,2,-20);
+                creacioPunt("r12b",'#109bef',0,2,-20);
                 creacioText("r12b",-0.5,1,-10,0,0,0);
-                creacioPunt("r4b",'#efdf4e',-45,1.6,-1);
+                creacioPunt("r4b",'#109bef',-45,1.6,-1);
                 creacioText("r4b",-15,0.6,0,0,90,0);
                 break;
             case "#r12b":
@@ -56,9 +56,9 @@ function initialize(){
                 break;
             case "#p32":
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p32/720.mp4";
-                creacioPunt("p5",'#37c7ef',-3,0,40);
+                creacioPunt("p5",'#109bef',-3,0,40);
                 creacioText("p5",-0.800,0.000,15,0,180,0);
-                creacioPunt("r21a",'#ef2e2c',10,2,0);
+                creacioPunt("r21a",'#109bef',10,2,0);
                 creacioText("r21a",10,0.5,-1,0,-90,0);
                 break;
             case "#p5":
