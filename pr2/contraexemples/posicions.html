@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://alumnes-ltim.uib.es/gdie10/classe360/posicions.html -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Exemple posicions GPS</title>
+    </head>
+    <body>
+        <div>
+            <video id="video" width="800" crossorigin="" src="https://ltim.uib.es/files/palma360/r12b/720.mp4"></video>
+        </div>
+        <div>
+            <button type="button" id="menys">-</button>
+            <button type="button" id="mes">+</button>
+        </div>
+        <div>
+            <label for="text"></label><textarea style="width: 800px" id="text"></textarea>
+        </div>
+        <script>
+window.onload = function() {
+    let video = document.getElementById('video');
+    let menys = document.getElementById('menys');
+    let mes = document.getElementById('mes');
+    let text = document.getElementById('text');
+
+    video.addEventListener('click', function (e) {
+        let t = video.currentTime.toFixed(2);
+        let rect = e.target.getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+        let w = rect.width;
+        let h = rect.height;
+        let lat = ((y / h) * -180 + 90).toFixed(2);
+        let lon = ((x / w) * 360 - 180).toFixed(2);
+
+        text.value += `t: ${t}, x: ${x}, y: ${y}, lat: ${lat}, lon: ${lon}\n`;
+    });
+
+    menys.addEventListener('click', function () {
+        let t = video.currentTime;
+        t -= 1;
+        if (t >= 0) {
+            video.currentTime = t;
+        }
+    });
+    mes.addEventListener('click', function () {
+        let t = video.currentTime;
+        t += 1;
+        if (t < video.duration) {
+            video.currentTime = t;
+        }
+    });
+}
+        </script>
+    
+
+
+</body></html>

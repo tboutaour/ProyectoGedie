@@ -39,69 +39,7 @@
 
 <!--listener hashstagechange: al canviar de hash, realitzar unes accions determinades-->
 
-<!--Crea bolles dinàmiques-->
-<script>
-    AFRAME.registerSystem('hypervideo', {
-        tracking: [
-            {
-                t: 0,
-                lat: -46.8,
-                lon: 141.8
-            },
-            {
-                t: 5,
-                lat: -7.2,
-                lon: -172.4
-            },
-            {
-                t: 10,
-                lat: 4,
-                lon: -100.9
-            }],
-        init: function() {
-            const entity = this.entity = document.createElement('a-sphere');
-            entity.setAttribute('color', 'red');
-            entity.setAttribute('radius', '5');
-            entity.setAttribute('position', '0 0 -100');
-            this.el.appendChild(entity);
-            this.video = document.querySelector('video');
-        },
-        tick: function() {
-            let t = this.video.currentTime;
-            // Trobam els trackings t0 i t1, t0.t < t < t1.t.
-            let t0, t1;
-            for (let i = 0; i < this.tracking.length - 1 && t0 === undefined; i++) {
-                // Han d'estar ordenats!
-                if (this.tracking[i],t <= t && t < this.tracking[i + 1].t) {
-                    t0 = this.tracking[i];
-                    t1 = this.tracking[i + 1];
-                }
-            }
-            // Si els hem trobat, hem de mostrar el punt a unes coordenades intermitges
-            if (t0 !== undefined) {
-                let f = (t - t0.t) / (t1.t - t0.t);
-                let lat0 = t0.lat * Math.PI / 180;
-                let lon0 = t0.lon * Math.PI / 180;
-                let lat1 = t1.lat * Math.PI / 180;
-                let lon1 = t1.lon * Math.PI / 180;
 
-                const R = 100;
-
-                let d = Math.acos(Math.cos(lat0) * Math.cos(lat1) * Math.cos(lon1 - lon0) + Math.sin(lat0) * Math.sin(lat1));
-                let A = Math.sin((1 - f) * d) / Math.sin(d);
-                let B = Math.sin(f * d) / Math.sin(d);
-                let x = R * (A * Math.cos(lat0) * Math.sin(lon0) + B * Math.cos(lat1) * Math.sin(lon1));
-                let y = R * (A * Math.sin(lat0) + B * Math.sin(lat1));
-                let z = -R * (A * Math.cos(lat0) * Math.cos(lon0) + B * Math.cos(lat1) * Math.cos(lon1));
-                this.entity.setAttribute('visible', 'true'); // Aixòs'ha de poder optimitzar!
-                this.entity.setAttribute('position', { x, y, z });
-            } else {
-                this.entity.setAttribute('visible', 'false');
-            }
-        }
-    });
-
-</script>
 
 <a-scene id="escena" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
     <a-assets>
