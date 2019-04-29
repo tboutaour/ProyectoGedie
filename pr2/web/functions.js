@@ -85,63 +85,108 @@ function initialize() {
 function bollesInfo() {
     AFRAME.registerSystem('hypervideo', {
         tracking: [
-            //bolla1
             {
-                t: 0,
-                lat: 24.40,
-                lon: -4.95
+                t: 0,lat: 15.60, lon: 8.55
             },
             {
-                t: 1,
-                lat: 32.80,
-                lon: -29.25
+                t: 1,lat: 20.40, lon: 2.70
             },
             {
-                t: 2,
-                lat: 43.60,
-                lon: -58.05
+                t: 2,lat: 32.00, lon: -3.60
             },
             {
-                t: 3,
-                lat: 46.40,
-                lon: -119.70
+                t: 3,lat: 66.00, lon: -32.85
             },
             {
-                t: 4,
-                lat: 24.80,
-                lon: -156.15
-            },
-            //bolla2
-            {
-                t: 0,
-                lat: 0.40,
-                lon: 28.35
+                t: 4,lat: 49.20, lon: -163.80
             },
             {
-                t: 1,
-                lat: 0.40,
-                lon: 22.05
+                t: 5,lat: 12.00, lon: -7.20
             },
             {
-                t: 2,
-                lat: -4.00,
-                lon: 22.50
+                t: 6,lat: 18.80, lon: -10.80
             },
             {
-                t: 3,
-                lat: -6.00,
-                lon: 28.80
+                t: 7,lat: 36.40, lon: -21.60
             },
             {
-                t: 4,
-                lat: -9.60,
-                lon: 69.30
+                t: 8,lat: 56.00, lon: -129.60
             },
             {
-                t: 5,
-                lat: -9.20,
-                lon: 129.15
-            }
+                t: 9,lat: 24.40, lon: -166.05
+            },
+            {
+                t: 11,lat: 17.60, lon: -4.05
+            },
+            {
+                t: 12,lat: 27.60, lon: -5.85
+            },
+            {
+                t: 13,lat: 64.00, lon: -16.65
+            },
+            {
+                t: 14,lat: 44.80, lon: -172.80
+            },
+            {
+                t: 15,lat: 14.40, lon: -9.45
+            },
+            {
+                t: 16,lat: 24.80, lon: -11.70
+            },
+            {
+                t: 17,lat: 49.20, lon: -30.60
+            },
+            {
+                t: 18,lat: 56.80, lon: -148.05
+            },
+            {
+                t: 20,lat: 10.00, lon: -6.75
+            },
+            {
+                t: 21,lat: 16.80, lon: -9.90
+            },
+            {
+                t: 22,lat: 36.00, lon: -19.35
+            },
+            {
+                t: 23,lat: 53.20, lon: -140.85
+            },
+            {
+                t: 24,lat: 10.00, lon: -3.60
+            },
+            {
+                t: 25,lat: 18.00, lon: -5.85
+            },
+            {
+                t: 26,lat: 42.00, lon: -19.80
+            },
+            {
+                t: 27,lat: 56.40, lon: -146.70
+            },
+            {
+                t: 29,lat: 16.40, lon: 16.20
+            },
+            {
+                t: 30,lat: 32.80, lon: 31.95
+            },
+            {
+                t: 31,lat: 45.60, lon: 122.40
+            },
+            {
+                t: 32,lat: 15.20, lon: -8.55
+            },
+            {
+                t: 33,lat: 24.80, lon: -12.15
+            },
+            {
+                t: 34,lat: 37.20, lon: -23.85
+            },
+            {
+                t: 35,lat: 55.60, lon: -42.30
+            },
+            {
+                t: 36,lat: 67.20, lon: -96.30
+            },
         ],
         init: function () {
             const entity = this.entity = document.createElement('a-sphere');
