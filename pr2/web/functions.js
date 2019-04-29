@@ -12,14 +12,14 @@ function creacioPunt(nombre,color,xcomp,ycomp,zcomp) {
     boxEl.className = 'clickable';
     sceneEl.appendChild(boxEl);
 }
-function creacioText(text,xcomp,ycomp,zcomp){
+function creacioText(text,xcomp,ycomp,zcomp,xrot,yrot,zrot){
     var sceneEl = document.querySelector('#punts');
     var boxEl = document.createElement('a-text');
     boxEl.setAttribute('value',text );
     boxEl.setAttribute('text','' );
     boxEl.setAttribute('width','15' );
     boxEl.setAttribute('position', {x: xcomp, y:ycomp, z:zcomp});
-    boxEl.setAttribute('rotation', {x: 0.000, y:180.000, z:0.000});
+    boxEl.setAttribute('rotation', {x: xrot, y:yrot, z:zrot});
     sceneEl.appendChild(boxEl);
 }
 
@@ -37,8 +37,11 @@ function initialize(){
             case "#p10":
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p10/720.mp4";
                 creacioPunt("p18",'#EF2D5E',45,1.6,-1);
+                creacioText("p18",25,0.6,-1,0,-90,0);
                 creacioPunt("r12b",'#2eef4d',0,2,-20);
+                creacioText("r12b",-0.5,1,-10,0,0,0);
                 creacioPunt("r4b",'#efdf4e',-45,1.6,-1);
+                creacioText("r4b",-15,0.6,0,0,90,0);
                 break;
             case "#r12b":
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r12b/720.mp4";
@@ -52,14 +55,11 @@ function initialize(){
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/r4b/720.mp4";
                 break;
             case "#p32":
-                <!--Aquesta url sera de companys-->
                 document.getElementById("idsrc").src="https://ltim.uib.es/files/palma360/p32/720.mp4";
                 creacioPunt("p5",'#37c7ef',-3,0,40);
-                creacioText("p5",-0.800,0.000,15);
+                creacioText("p5",-0.800,0.000,15,0,180,0);
                 creacioPunt("r21a",'#ef2e2c',10,2,0);
-
-                creacioPunt("r20b",'#efdd38',2,0,30);
-
+                creacioText("r21a",10,0.5,-1,0,-90,0);
                 break;
             case "#p5":
                 <!--Aquesta url sera de companys-->

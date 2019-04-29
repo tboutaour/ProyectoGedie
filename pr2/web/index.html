@@ -13,7 +13,6 @@
 <script>
     AFRAME.registerComponent('clickable', {
         init: function () {
-            debugger;
             this.index = 0;
             this.el.addEventListener('click', e => {
                 if (this.el.id === "r12b") {
@@ -31,7 +30,6 @@
                     console.log(this.el.id);
                     window.location.hash = "r21a";
                 }
-
             });
         }
     });
@@ -106,7 +104,7 @@
 <a-scene id="escena" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
     <a-assets>
         <video data-dashjs-player id="idsrc" autoplay crossorigin loop muted
-               src="https://ltim.uib.es/files/palma360/r20a/720.mp4">
+               src="https://ltim.uib.es/files/palma360/p10/720.mp4">
         </video>
     </a-assets>
     <a-videosphere rotation="0 -90 0" src="#idsrc"></a-videosphere>
