@@ -1,85 +1,116 @@
-$(function () {
-    initialize();
-});
+var video = document.getElementById('idsrc');
+var player;
+var url;
 
-function creacioPunt(nombre, color, xcomp, ycomp, zcomp) {
+function initialize(){
+    window.addEventListener('load', hashchange);
+    window.addEventListener('hashchange', hashchange);
+}
+
+function creacioPunt(nombre,color,xcomp,ycomp,zcomp) {
     var sceneEl = document.querySelector('#punts');
     var boxEl = document.createElement('a-sphere');
-    boxEl.setAttribute('id', nombre);
+    boxEl.setAttribute('id',nombre);
     boxEl.setAttribute('material', {color: color});
-    boxEl.setAttribute('position', {x: xcomp, y: ycomp, z: zcomp});
-    boxEl.setAttribute('clickable', '');
+    boxEl.setAttribute('position', {x: xcomp, y:ycomp, z:zcomp});
+    boxEl.setAttribute('clickable','');
     boxEl.className = 'clickable';
     sceneEl.appendChild(boxEl);
 }
 
-function creacioText(text, xcomp, ycomp, zcomp) {
+function creacioText(text,xcomp,ycomp,zcomp,xrot,yrot,zrot){
     var sceneEl = document.querySelector('#punts');
     var boxEl = document.createElement('a-text');
-    boxEl.setAttribute('value', text);
-    boxEl.setAttribute('text', '');
-    boxEl.setAttribute('width', '15');
-    boxEl.setAttribute('position', {x: xcomp, y: ycomp, z: zcomp});
-    boxEl.setAttribute('rotation', {x: 0.000, y: 180.000, z: 0.000});
+    boxEl.setAttribute('value',text );
+    boxEl.setAttribute('text','' );
+    boxEl.setAttribute('width','15' );
+    boxEl.setAttribute('position', {x: xcomp, y:ycomp, z:zcomp});
+    boxEl.setAttribute('rotation', {x: xrot, y:yrot, z:zrot});
     sceneEl.appendChild(boxEl);
 }
 
-function initialize() {
-    $(window).on('hashchange', function (e) {
-        var NodePunts = document.querySelector('#punts');
-        while (NodePunts.hasChildNodes()) {
-            NodePunts.removeChild(NodePunts.lastChild);
-        }
-        debugger;
+function crearP10() {
+    creacioPunt("p18",'#109bef',45,1.6,-1);
+    creacioText("p18",25,0.6,-1,0,-90,0);
+    creacioPunt("r12b",'#109bef',0,2,-20);
+    creacioText("r12b",-0.5,1,-10,0,0,0);
+    creacioPunt("r4b",'#109bef',-45,1.6,-1);
+    creacioText("r4b",-15,0.6,0,0,90,0);
+}
+function crearP32() {
+    creacioPunt("p5",'#109bef',-3,0,40);
+    creacioText("p5",-1,0.000,15,0,180,0);
+    creacioPunt("r21a",'#109bef',10,2,0);
+    creacioText("r21a",10,0.5,-1,0,-90,0);
+}
+function hashchange() {
+    var NodePunts = document.querySelector('#punts');
+    while(NodePunts.hasChildNodes()){
+        NodePunts.removeChild(NodePunts.lastChild);
+    }
 
-        console.log("Accions a partir del canvi de hash: " + window.location.hash);
-        switch (window.location.hash) {
-            <!--Configuración des P10-->
-            case "#p10":
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/p10/720.mp4";
-                creacioPunt("p18", '#EF2D5E', 45, 1.6, -1);
-                creacioPunt("r12b", '#2eef4d', 0, 2, -20);
-                creacioPunt("r4b", '#efdf4e', -45, 1.6, -1);
-                break;
-            case "#r12b":
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/r12b/720.mp4";
-                bollesInfo();
-                break;
-            case "#p18":
-                <!--Aquesta url sera de companys-->
-                window.location.href = "https://alumnes-ltim.uib.es/gdie1905/p2/p18/index.html";
-                break;
-            case "#r4b":
-                <!--Aquesta url sera de companys-->
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/r4b/720.mp4";
-                break;
-            case "#p32":
-                <!--Aquesta url sera de companys-->
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/p32/720.mp4";
-                creacioPunt("p5", '#37c7ef', -3, 0, 40);
-                creacioText("p5", -0.800, 0.000, 15);
-                creacioPunt("r21a", '#ef2e2c', 10, 2, 0);
+    console.log("Accions a partir del canvi de hash: "+ window.location.hash);
+    switch(window.location.hash) {
+        <!--Configuración des P10-->
+        case "#p10":
+            url = "https://ltim.uib.es/files/palma360/p10/dash.mpd";
+            crearP10();
+            break;
+        case "#r12b":
+            url = "https://ltim.uib.es/files/palma360/r12b/dash.mpd";
+            bollesInfo();
+            break;
+        case "#p18":
+            <!--Aquesta url sera de companys-->
+            window.location.href = "https://alumnes-ltim.uib.es/gdie1905/p2/p18/index.html";
+            break;
+        case "#r4b":
+            <!--Aquesta url sera de companys-->
+            window.location.href = "https://alumnes-ltim.uib.es/gdie1903/#r4b";
+            break;
+        case "#p32":
+            url ="https://ltim.uib.es/files/palma360/p32/dash.mpd";
+            crearP32();
+            break;
+        case "#p5":
+            <!--Aquesta url sera de companys-->
+            url = "https://ltim.uib.es/files/palma360/p5/dash.mpd";
+            break;
+        case "#r21a":
+            <!--Aquesta url sera de companys-->
+            window.location.href = "https://alumnes-ltim.uib.es/gdie1912/P2b/#r21a";
+            break;
+        case "#r20b":
+            url = "https://ltim.uib.es/files/palma360/r20b/dash.mpd";
+            break;
+        default:
+            url = "https://ltim.uib.es/files/palma360/r12a/dash.mpd";
+            console.log("default case del switch");
+    }
+    if (player) {
+        // Si el player ha estat creat
+        player.reset();
+        player.attachView(video);
+        player.attachSource(url);
+    } else {
+        // Si no, el cream ara
+        player = dashjs.MediaPlayer().create();
+        player.initialize(video, url, true);
+    }
+}
 
-                creacioPunt("r20b", '#efdd38', 2, 0, 30);
-
-                break;
-            case "#p5":
-                <!--Aquesta url sera de companys-->
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/p5/720.mp4";
-                break;
-            case "#r21a":
-                <!--Aquesta url sera de companys-->
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/r21a/720.mp4";
-                break;
-            case "#r20b":
-
-                document.getElementById("idsrc").src = "https://ltim.uib.es/files/palma360/r20b/720.mp4";
-                break;
-
-            default:
-                console.log("default case del switch");
-        }
-    });
+function redireccio_final(){
+    switch (window.location.hash) {
+        case "#r12b":
+            window.location.href="https://alumnes-ltim.uib.es/gdie1911/360/#p20";
+            break;
+        case "#r12a":
+            window.location.hash= "#p10";
+            break;
+        case "#r20a":
+            window.location.href="https://alumnes-ltim.uib.es//gdie1912/P2b/#p32";
+            break;
+    }
 }
 
 function bollesInfo() {

@@ -8,12 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
-<!--al fer click a la esfera verda, redireccionar la web-->
 <script>
     AFRAME.registerComponent('clickable', {
         init: function () {
-            debugger;
             this.index = 0;
             this.el.addEventListener('click', e => {
                 if (this.el.id === "r12b") {
@@ -43,14 +40,12 @@
 
 <a-scene id="escena" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="">
     <a-assets>
-        <video data-dashjs-player id="idsrc" autoplay crossorigin loop muted
-               src="https://ltim.uib.es/files/palma360/r20a/720.mp4">
+        <video data-dashjs-player autoplay id="idsrc" preload="auto" onended="redireccio_final()">
         </video>
     </a-assets>
     <a-videosphere rotation="0 -90 0" src="#idsrc"></a-videosphere>
     <a-entity id="punts">
-        <a-text value="r4b" width="15" position="-10.000 2.500 2.500"
-                rotation="0.000 90.000 -2.000" text=""></a-text>
+
     </a-entity >
 
    <a-entity  camera="" look-controls="" position="0 1.6 0" rotation="">
@@ -73,5 +68,8 @@
    <a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
    </a-scene>
 <script src="functions.js"></script>
+<script>
+initialize();
+</script>
 </body>
 </html>
