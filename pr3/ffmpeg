@@ -1,12 +1,15 @@
+Coses a implementar:
+• Apple HTTP Live Streaming HLS: https://developer.apple.com/streaming/
+• MPEG-DASH: https://dashif.org/
+-------------------------------------------------------------------------------
+
 ssh root@alumnes-ltim.uib.es -p 10077
 fe84
 cd /var/www/html/pr3/video
 ffmpeg -i "PDF_16x06.mp4" -s 1280x720 -vcodec libx264 -profile:v baseline -x264opts bitrate=2000:keyint=30 -acodec aac -ab 128k -strict -2 ffmpeg/correu.mp4
 
 
-per fer els m3u8
+per fer els m3u8:
 ffmpeg -i P3-low.mp4 -c:a aac -strict -2 -ar 48000 -ab 64k -c:v libx264 -b:v 512k -flags -global_header -map 0 -f segment -segment_time 10 -segment_list low.m3u8 -segment_format mpegts strlow_%03d.ts
-
 ffmpeg -i P3-mid.mp4 -c:a aac -strict -2 -ar 48000 -ab 64k -c:v libx264 -b:v 512k -flags -global_header -map 0 -f segment -segment_time 10 -segment_list mid.m3u8 -segment_format mpegts strmid_%03d.ts
-
 ffmpeg -i P3-high.mp4 -c:a aac -strict -2 -ar 48000 -ab 64k -c:v libx264 -b:v 512k -flags -global_header -map 0 -f segment -segment_time 10 -segment_list high.m3u8 -segment_format mpegts strhigh_%03d.ts
