@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="mystyle.css">
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -51,6 +52,10 @@
 
 <!--Reproductor de vídeo-->
 <div class="container">
+    <select id="select">
+        <option>HLS</option>
+        <option>DASH</option>
+    </select>
     <div class="row">
         <div id="video-container" class="col-md-6">
             <video id="mainVid" poster="../fotos/preview-episodi.png" onclick="playpause()">
@@ -285,6 +290,41 @@
 
 <!-- End Document
     	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script>
+let video = document.getElementById('mainVid');
+let player;
+let select = document.getElementById('select');
+
+select.addEventListener('change', function (e) {
+window.location.hash = select.selectedOptions[0].textContent;
+debugger;
+});
+
+function hashchange() {
+if ('#' + select.selectedOptions[0].textContent !== window.location.hash) {
+let option = [...select.options].find(o => '#' + o.textContent === window.location.hash);
+if (option) {
+select.selectedIndex = option.index;
+}
+
+}
+if (select.value) {
+//if (player) {
+// Si el player ha estat creat
+//player.reset();
+//player.attachView(video);
+//player.attachSource(select.value);
+//} else {
+// Si no, el cream ara
+player = dashjs.MediaPlayer().create();
+player.initialize(video, select.value, true);
+//}
+}
+}
+
+window.addEventListener('load', hashchange);
+window.addEventListener('hashchange', hashchange);
+</script>
 <script src="js/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/jquery-ui/jquery-ui.min.js"></script>
@@ -293,4 +333,5 @@
 </body>
 <script src="./MainJavaScript.js"></script>
 <script src="./tracks.js"></script>
+<script src="./Hls_functions.js"></script>
 </html>
